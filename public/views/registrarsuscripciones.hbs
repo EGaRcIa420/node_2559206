@@ -253,23 +253,22 @@
                         <div class="form-container">
                         <h2>Agregar suscripcion</h2>
                         <form>
-                            <label for="id">ID suscripciones:</label>
+                            <label for="Id_suscripciones">ID suscripciones:</label>
                             <input type="number" id="Id_suscripciones" placeholder="Id_suscripciones" >
 
-                            <label for="paquete">Id servicios:</label>
+                            <label for="Id_servicios">Id servicios:</label>
                             <input type="number" id="Id_servicios" placeholder="Id_servicios" >
 
-                            <label for="servicios">Regularidad:</label>
+                            <label for="Regularidad">Regularidad:</label>
                             <input type="text" id="Regularidad" placeholder="Regularidad" >
 
-                            <label for="cantidad">fecha inicio:</label>
+                            <label for="fecha_inicio">fecha inicio:</label>
                             <input type="date" id="fecha_inicio" placeholder="fecha_inicio" >
 
-                            <label for="cantidad">fecha fin:</label>
+                            <label for="fecha_fin">fecha fin:</label>
                             <input type="date" id="fecha_fin" placeholder="fecha_fin" >
                          
-                            <button type="button" class="btn btn-dark boton-registro" onclick="validarCamposSuscripciones()">Guardar</button>
-
+                            <button type="button" class="btn btn-dark boton-registro" onclick="validarsuscripcion()">Guardar</button>
                         </form>
                         </div>
                     </td>
@@ -307,7 +306,7 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
-<script src="funcionesSuscripciones.js"></script>
+<script src="funcionessuscripcion.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
