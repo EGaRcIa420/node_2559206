@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos de la sección de inicio */
+  #inicio {
+    background-image: url("https://www.gvwire.com/wp-content/uploads/2020/04/gym.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #ff5e00;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cta-button:hover {
+    background-color: #ff7800;
+  }
+  
+  /* Estilos de la sección de testimonios */
+  .testimonial {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .testimonial p {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .testimonial-author {
+    font-style: italic;
+    color: #888;
+    font-size: 16px;
+  }
+  
+  /* Estilos de la sección de servicios */
+#servicios {
+    background-color: #a1a1a1;
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .service {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .service:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service h3 {
+    margin: 10px 0;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 24px;
+    color: #39b0ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service p {
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* Estilos de la sección de contacto */
+  #contacto {
+    background-color: #585858;
+    text-align: center;
+    padding: 40px 0;
+    color: #fff;
+  }
+  
+  #contacto h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  #contacto p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Pacifico', cursive;
+  }
+  
+  #contacto p:last-child {
+    margin-bottom: 0;
+    font-family: 'Pacifico', cursive;
+  }
+  

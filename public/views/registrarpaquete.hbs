@@ -21,6 +21,35 @@
       border: none;
       cursor: pointer;
     }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -171,12 +200,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tabla Servicios</h1>
+            <h1>Tabla Paquetes</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Tabla Servicios</li>
+              <li class="breadcrumb-item active">Paquetes</li>
             </ol>
           </div>
         </div>
@@ -190,147 +219,43 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Listado de Servicios</h3>
-              </div>
-              <div class="col-lg-12">
-                <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarservicios">
-                    Nuevo Servicios</a></i></button>
+                <h3 class="card-title">Agregar Paquetes</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Id Servicios</th>
-                    <th>Servicios</th>
-                    <th>Clases</th>
-                    <th>Precio</th>
-                    <th>Estado</th> 
-                    <th>Acciones</th>
-                  </tr>
-                  </thead>
-                  <tr>
-                    <td>1</td>
-                    <td>Día</td>
-                    <td>Clase,Rumba,Máquinas</td>
-                    <td>6900</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Mensualidad</td>
-                    <td>Clase,Rumba,Máquinas</td>
-                    <td>69000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Mensualidad</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,evaluación</td>
-                    <td>98000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Trimestre</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,acompañamiento,obsequio spa</td>
-                    <td>198000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Semestre</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,acompañamiento,obsequio spa</td>
-                    <td>359000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>Anualidad</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,evaluación, acompañamiento</td>
-                    <td>780000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>Personalizado</td>
-                    <td>Nutrición,evaluación 3 días</td>
-                    <td>98000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>10 Masajes</td>
-                    <td>Evaluación, acompañamiento, obsequio</td>
-                    <td>298000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>5 Masajes</td>
-                    <td>Evaluación, acompañamiento, obsequio</td>
-                    <td>198000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>Terapia spa</td>
-                    <td>Nutrición</td>
-                    <td>40000</td>
-                    <td>Activo</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
+                <table>
                     <tr>
-                      <th>Id Servicios</th>
-                      <th>Servicios</th>
-                      <th>Clases</th>
-                      <th>Precio</th>
-                      <th>Estado</th> 
-                      <th>Acciones</th>
+                    <td>
+                        <div class="form-container">
+                        <h2>Agregar Paquete</h2>
+                        <form>
+                            <label for="id">ID Paquete:</label>
+                            <input type="number" id="id_paquete" placeholder="id_paquete" >
+
+                            <label for="paquete">Paquete:</label>
+                            <input type="text" id="paquete" placeholder="paquete" >
+
+                            <label for="servicios">Servicios:</label>
+                            <input type="text" id="servicios" placeholder="servicios" >
+
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" placeholder="cantidad" >
+
+                            <label for="total">Total:</label>
+                            <input type="number" id="total" placeholder="total" >
+
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                            </select>
+
+                            <button type="button" class="btn btn-dark boton-registro" onclick="validarCamposPaquete()">Guardar</button>
+
+                        </form>
+                        </div>
+                    </td>
                     </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -364,6 +289,7 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
+<script src="funcionespaq.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

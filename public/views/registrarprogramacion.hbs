@@ -3,27 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>Nueva Programacion 3 | THOR </title>
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <style>
-    .btn {
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
 </head>
-
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
@@ -144,7 +132,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link">
+                <a href="/programacion" class="nav-link active">
                   <i class="fas fa-code"></i>
                   <p>Programacion</p>
                 </a>
@@ -171,146 +159,112 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tabla Citas</h1>
+            <h1>Programacion</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Tabla Citas</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Calendar</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <div class="card">
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Listado de Citas</h3>
-              </div>
-              <div class="col-lg-12">
-                <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarcitas">
-                    Nueva Cita</a></i></button>
+                <h3 class="card-title">Nueva Programacion </h3>
               </div>
               <!-- /.card-header -->
+              <!-- form start -->
+              <form>
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>ID Citas</th>
-                    <th>Nombre y Apellido</th>
-                    <th>Telefono</th>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Restrincciones</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                  </tr>
-                  </thead>
-                  <tr>
-                    <td>1</td>
-                    <td>Juaquin Gómez</td>
-                    <td>3214568790</td>
-                    <td>18/05/2023</td>
-                    <td>08:45 a.m.</td>
-                    <td>Revision rodilla</td>
-                    <td>Pendiente</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Luis Alfonso</td>
-                    <td>3152348790</td>
-                    <td>29/05/2023</td>
-                    <td>11:45 a.m.</td>
-                    <td>Revision tobillo</td>
-                    <td>Pendiente</td>
-                    <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>María López</td>
-                    <td>9876543210</td>
-                    <td>19/05/2023</td>
-                    <td>09:30 a.m.</td>
-                    <td>Examen de nutrición</td>
-                    <td>Pendiente</td>
-                    <td>
-                      <button class="btn"><i class="fas fa-edit"></i></button>
-                      <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Pedro Martínez</td>
-                    <td>6547893210</td>
-                    <td>19/05/2023</td>
-                    <td>10:15 a.m.</td>
-                    <td>Consulta lesión futbolistica</td>
-                    <td>Pendiente</td>
-                    <td>
-                      <button class="btn"><i class="fas fa-edit"></i></button>
-                      <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Laura Ramírez</td>
-                    <td>1234567890</td>
-                    <td>20/05/2023</td>
-                    <td>11:00 a.m.</td>
-                    <td>Revision de columna</td>
-                    <td>Pendiente</td>
-                    <td>
-                      <button class="btn"><i class="fas fa-edit"></i></button>
-                      <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>ID Citas</th>
-                      <th>Nombre y Apellido</th>
-                      <th>Telefono</th>
-                      <th>Fecha</th>
-                      <th>Hora</th>
-                      <th>Restrincciones</th>
-                      <th>Estado</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </tfoot>
-                </table>
+                <div class="form-group">
+                  <label for="fecha">Fecha</label>
+                  <input type="date" class="form-control" id="fecha" placeholder="Ingrese la fecha" required>
+                </div>
+                <div class="form-group">
+                  <label for="horaInicio">Hora Inicio</label>
+                  <input type="time" class="form-control" id="horaInicio" placeholder="Ingrese la hora de inicio" required>
+                </div>
+                <div class="form-group">
+                  <label for="horaFinal">Hora Final</label>
+                  <input type="time" class="form-control" id="horaFinal" placeholder="Ingrese la hora final" required>
+                </div>
+                <div class="form-group">
+                  <label for="instructor">Instructor</label>
+                  <input type="text" class="form-control" id="instructor" placeholder="Ingrese el nombre del instructor" required>
+                </div>
+                <div class="form-group">
+                  <label for="clase">Clase</label>
+                  <input type="text" class="form-control" id="clase" placeholder="Ingrese el nombre de la clase" required>
+                </div>
+                <div class="form-group">
+                  <label for="estado">Estado</label>
+                  <select class="form-control" id="estado" required>
+                    <option value="">Seleccione el estado</option>
+                    <option value="activo">Activo</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="cancelado">Cancelado</option>
+                  </select>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+              </div>
+            </form>
+            <script>
+              // Validar que la hora de inicio sea inferior a la hora final
+              document.getElementById("horaInicio").addEventListener("change", function() {
+                var horaInicio = this.value;
+                var horaFinal = document.getElementById("horaFinal").value;
+                
+                if (horaFinal && horaInicio >= horaFinal) {
+                  alert("La hora de inicio debe ser inferior a la hora final.");
+                  this.value = "";
+                }
+              });
+              
+              document.getElementById("horaFinal").addEventListener("change", function() {
+                var horaInicio = document.getElementById("horaInicio").value;
+                var horaFinal = this.value;
+                
+                if (horaInicio && horaInicio >= horaFinal) {
+                  alert("La hora final debe ser superior a la hora de inicio.");
+                  this.value = "";
+                }
+              });
+            </script>
+            </div>
+      
+                  </div>
+                  <div class="form-group">
+                  </div>
+                </form>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </div>
-          <!-- /.col -->
+          <!--/.col (right) -->
         </div>
         <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
-    Todos los derechos reservados.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.2.0
     </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -322,44 +276,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="Cerrar.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../plugins/jszip/jszip.min.js"></script>
-<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+$(function () {
+  bsCustomFileInput.init();
+});
 </script>
 </body>
 </html>
