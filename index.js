@@ -48,6 +48,38 @@ app.get('/programacion', (req, res)=>{
   res.render('programacion')
 })
 
+app.get('/clientes', (req, res)=>{
+    res.render('clientes')
+})
+
+app.get('/empleados', (req, res)=>{
+    res.render('empleados')
+})
+
+app.get('/roles', (req, res)=>{
+    res.render('roles')
+})
+
+app.get('/suscripciones', (req, res)=>{
+    res.render('suscripciones')
+})
+
+app.get('/registrarClientes', (req, res)=>{
+    res.render('registrarClientes')
+})
+
+app.get('/registrarRoles', (req, res)=>{
+    res.render('registrarRoles')
+})
+
+app.get('/registrarsuscripciones', (req, res)=>{
+    res.render('registrarsuscripciones')
+})
+
+app.get('/registrarEmpleados', (req, res)=>{
+    res.render('registrarEmpleados')
+})
+
 app.get('/registrarpaquete', (req, res)=>{
     res.render('registrarpaquete')
 })
@@ -72,6 +104,7 @@ app.get('/registraragenda', (req, res)=>{
 app.listen(puerto,()=>{
     console.log(`Escuchando por el puerto ${puerto}`)
 })
+
 
 
 

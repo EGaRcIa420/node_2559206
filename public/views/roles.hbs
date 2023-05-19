@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>THOR | Programacion</title>
-
+  <title>AdminLTE 3 | DataTables</title>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- jsGrid -->
-  <link rel="stylesheet" href="../../plugins/jsgrid/jsgrid.min.css">
-  <link rel="stylesheet" href="../../plugins/jsgrid/jsgrid-theme.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .btn {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
@@ -117,7 +126,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/roles" class="nav-link ">
+                <a href="/roles" class="nav-link active">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
@@ -147,19 +156,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link active">
+                <a href="/programacion" class="nav-link">
                   <i class="fas fa-code"></i>
                   <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
+                <a href="/calendario" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Calendario</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
+                <a href="/empleados" class="nav-link active">
                     <i class="fas fa-user-tie"></i>
                     <p>Empleados</p>
                 </a>
@@ -186,43 +195,111 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Programacion</h1>
+            <h1>Tabla roles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Calendar</li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
+              <li class="breadcrumb-item active">Tabla roles</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-
     <!-- Main content -->
     <section class="content">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Programacion</h3>
-          
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Listado de roles</h3>
+              </div>
+              <div class="col-lg-12">
+                <button class="btn"><i class="fas fa-plus">
+                    <a class="btn btn-dark boton-registro" href="/registrarRoles">
+                    Nuevo Rol</a></i></button>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>Id Roles</th>
+                    <th>Id Usuarios </th>
+                    <th>Nombre rol</th>
+                    <th>Permisos Rol</th>
+                    <th>Acciones</th>
+                  </tr>
+                  </thead>
+                  <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>456</td>
+                    <td>Administrador</td>
+                    <td>Realizar cambios en los usuarios</td>
+                    <td>
+                         <button class="btn"><i class="fas fa-edit"></i></button>
+                         <button class="btn"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>678</td>
+                    <td>736</td>
+                    <td>Instructor</td>
+                    <td>Realiza cambios en su perfil</td>
+                    <td>
+                         <button class="btn"><i class="fas fa-edit"></i></button>
+                         <button class="btn"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>7465</td>
+                    <td>8466</td>
+                    <td>usuario</td>
+                    <td>ver su informacion</td>
+                    <td>
+                         <button class="btn"><i class="fas fa-edit"></i></button>
+                         <button class="btn"><i class="fas fa-trash"></i></button>
+                    </td>
+                  </tr>
+                 
+                  </tbody>
+                  <tfoot>
+                   <tr>
+                    <th>N°</th>
+                    <th>Id Roles</th>
+                    <th>Id Usuarios </th>
+                    <th>Nombre rol</th>
+                    <th>Permisos Rol</th>
+                    <th>Acciones</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
         </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <a type="button" class="btn btn-primary" href="/registrarprogramacion">Agregar Programacion</a>
-          <div id="jsGrid1"></div>
-        </div>
-        <!-- /.card-body -->
+        <!-- /.row -->
       </div>
-      <!-- /.card -->
+      <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
+    Todos los derechos reservados.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -234,12 +311,23 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<script src="Cerrar.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- jsGrid -->
-<script src="../../plugins/jsgrid/demos/db.js"></script>
-<script src="../../plugins/jsgrid/jsgrid.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
@@ -247,23 +335,18 @@
 <!-- Page specific script -->
 <script>
   $(function () {
-    $("#jsGrid1").jsGrid({
-        height: "100%",
-        width: "100%",
-
-        sorting: true,
-        paging: true,
-
-        data: db.clients,
-
-        fields: [
-            { name: "Hora Inicio", type: "time", width: 100 },
-            { name: "Hora Final", type: "time", width: 100 },
-            { name: "Instructor", type: "text", width: 100 },
-            { name: "Clase", type: "select", width:100},
-            { name: "Fecha", type: "date", width:100 },
-            { name: "Estado", type: "bit", width:100 },
-        ]
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
     });
   });
 </script>
