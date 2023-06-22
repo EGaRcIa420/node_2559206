@@ -12,8 +12,8 @@ function validarCamposCita() {
       telefono.trim() === '' ||
       fecha.trim() === '' ||
       hora.trim() === '' ||
-      restricciones.trim() === '' ||
-      estado.trim() === ''
+      restricciones.trim() === '' 
+
     ) {
       Swal.fire(
         'Por favor, complete todos los campos',
@@ -99,7 +99,10 @@ function validarCamposCita() {
       'success'
     );
 
-    window.location.href = "/citas";
+    setTimeout(() => {
+      window.location.href = "/citas";
+    }, 4000);
+
   }
 
   function confirmarEliminacion(){

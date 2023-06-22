@@ -1,11 +1,11 @@
 function validarCampos() {
-  var idPaquete = document.getElementById('id_paquete').value;
+  var idServicio = document.getElementById('id_servicios').value;
   var servicios = document.getElementById('servicios').value;
   var clases = document.getElementById('clases').value;
   var precio = document.getElementById('precio').value;
 
   if (
-    idPaquete.trim() === '' ||
+    idServicio.trim() === '' ||
     servicios.trim() === '' ||
     clases.trim() === '' ||
     precio.trim() === ''
@@ -18,9 +18,9 @@ function validarCampos() {
     return;
   }
 
-  if (!/^[0-9]+$/.test(idPaquete)) {
+  if (!/^[0-9]+$/.test(idServicio)) {
     Swal.fire(
-      'El idPaquete de servicio solo debe contener números',
+      'El idServicio de servicio solo debe contener números',
       '',
       'error'
     );
@@ -28,7 +28,7 @@ function validarCampos() {
   }
 
   // Validación de servicios
-  if (!/^[A-Za-z0-9]+$/.test(servicios)) {
+  if (!/^[A-Za-z0-9\s]+$/.test(servicios)) {
     Swal.fire(
       'El nombre de servicio solo debe contener letras y números',
       '',
@@ -57,14 +57,16 @@ function validarCampos() {
     return;
   }
 
-  let servicio = {
-    servicios: _servicios,
-    clases: _clases,
-    precio: _precio,
-    estado: _estado,
-  };
+  Swal.fire(
+    'Guardado exitosamente',
+    '',
+    'success'
+  );
 
-  window.location.href = "/servicios";
+  setTimeout(() => {
+    window.location.href = "/servicios";
+  }, 4000);
+  
 }
 
 function confirmarEliminacion(){

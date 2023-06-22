@@ -263,14 +263,22 @@
                       <div class="form-container">
                         <h2>Agregar Servicios</h2>
                         <form>
-                        <label for="id_paquete">ID Servicios:</label>
-                        <input type="number" id="id_paquete" placeholder="id_paquete">
+                        <label for="id_servicios">ID Servicios:</label>
+                        <input type="number" id="id_servicios" placeholder="id_servicios">
 
                         <label for="servicios">Servicios:</label>
                         <input type="text" id="servicios" placeholder="servicios">
 
                         <label for="clases">Clases:</label>
-                        <input type="text" id="clases" placeholder="clases">
+                        <select id="clases" name="clases" required>
+                          <option id="clases" name="clases">Seleccionar las clases</option>
+                          <option value="Maquina, Clases, Spinning">Maquina, Clases, Spinning</option>
+                          <option value="Spa, Nutricion, Clases, Maquinas">Spa, Nutricion, Clases, Maquinas</option>
+                          <option value="Maquinas, Rumba, Spa, Clases ">Maquinas, Rumba, Spa, Clases </option>
+                          <option value="Nutricion, Clases, Maquinas">Nutricion, Clases, Maquinas</option>
+                          <option value="Acompañamiento, Rumba, Spinning, Maquinas">Acompañamiento, Rumba, Spinning, Maquinas</option>
+                          <option value="Acompañamiento, Nutricion, Evaluacion, Maquinas , Clases">Acompañamiento, Nutricion, Evaluacion, Maquinas , Clases</option>
+                        </select>
 
                         <label for="precio">Precio:</label>
                         <input type="number" id="precio" placeholder="precio">
@@ -281,10 +289,11 @@
                           <option value="inactivo">Inactivo</option>
                         </select>
 
+                      </form>
+                      
                         <button type="button" class="btn btn-success boton-registro" onclick="validarCampos()">Guardar</button>
                         <button type="button" class="btn btn-danger boton-cancelar" href="/servicios">Cancelar</button>
 
-                      </form>
                       </div>
                     </td>
                   </tr>
