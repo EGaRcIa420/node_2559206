@@ -4,45 +4,82 @@ function validarCampos() {
   var clases = document.getElementById('clases').value;
   var precio = document.getElementById('precio').value;
 
-  if (idPaquete.trim() === '') {
-    alert('Por favor, ingrese un ID de Servicios.');
+  if (
+    idPaquete.trim() === '' ||
+    servicios.trim() === '' ||
+    clases.trim() === '' ||
+    precio.trim() === ''
+  ) {
+    Swal.fire(
+      'Por favor, complete todos los campos',
+      '',
+      'error'
+    );
     return;
   }
 
-  if (isNaN(idPaquete)) {
-    alert('El ID de Servicios debe ser un número.');
+  if (!/^[0-9]+$/.test(idPaquete)) {
+    Swal.fire(
+      'El idPaquete de servicio solo debe contener números',
+      '',
+      'error'
+    );
     return;
   }
 
-  if (servicios.trim() === '') {
-    alert('Por favor, ingrese el nombre del servicio.');
+  // Validación de servicios
+  if (!/^[A-Za-z0-9]+$/.test(servicios)) {
+    Swal.fire(
+      'El nombre de servicio solo debe contener letras y números',
+      '',
+      'error'
+    );
     return;
   }
 
-  if (!/^[a-zA-Z]+$/.test(servicios)) {
-    alert('El nombre del servicio solo debe contener letras.');
+  // Validación del precio
+  if (!/^\d+$/.test(precio)) {
+    Swal.fire(
+      'El precio debe ser un número entero',
+      '',
+      'error'
+    );
     return;
   }
 
-  if (clases.trim() === '') {
-    alert('Por favor, ingrese el tipo de clase.');
+  // Validación del rango del precio
+  if (precio < 6000 || precio > 1000000) {
+    Swal.fire(
+      'El precio debe estar entre 6000 y 1000000',
+      '',
+      'error'
+    );
     return;
   }
 
-  if (!/^[a-zA-Z]+$/.test(clases)) {
-    alert('El tipo de clase solo debe contener letras.');
-    return;
-  }
-
-  if (precio.trim() === '') {
-    alert('Por favor, ingrese un precio.');
-    return;
-  }
-
-  if (isNaN(precio)) {
-    alert('El precio debe ser un número.');
-    return;
-  }
+  let servicio = {
+    servicios: _servicios,
+    clases: _clases,
+    precio: _precio,
+    estado: _estado,
+  };
 
   window.location.href = "/servicios";
+}
+
+function confirmarEliminacion(){
+  Swal.fire({
+    title: '¿Estás seguro de que deseas eliminar este elemento?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Aquí puedes realizar la lógica para eliminar el elemento
+      Swal.fire('Eliminado', 'La cita ha sido eliminada exitosamente.', 'success');
+    } else {
+      Swal.fire('Cancelado', 'La cita no ha sido eliminada.', 'info');
+    }
+  });
 }

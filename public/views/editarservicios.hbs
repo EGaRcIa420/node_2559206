@@ -15,27 +15,51 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
-
   <style>
     .btn {
       padding: 10px;
       border: none;
       cursor: pointer;
     }
-    .eliminar-btn {
-    background-color: #ff0000; /* Color de fondo rojo */
-    color: #ffffff; /* Color de texto blanco */
-    border: none;
-    padding: 5px; /* Ajusta el valor de padding para cambiar el tamaño */
-    font-size: 14px; /* Ajusta el valor de font-size para cambiar el tamaño del icono */
-    border-radius: 5px;
-    cursor: pointer;
-  }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
 
-  .eliminar-btn i {
-    margin-right: 5px; /* Margen derecho entre el icono y el texto */
-  }
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .boton-registro {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
+
+    .boton-cancelar {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
   </style>
 </head>
 
@@ -215,7 +239,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Tabla Servicios</li>
+              <li class="breadcrumb-item active">Servicios</li>
             </ol>
           </div>
         </div>
@@ -229,187 +253,41 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Listado de Servicios</h3>
-              </div>
-              <div class="col-lg-12">
-                <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarservicios">
-                    Nuevo Servicios</a></i></button>
+                <h3 class="card-title">Agregar Servicios</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+                <table>
                   <tr>
-                    <th>Id Servicios</th>
-                    <th>Servicios</th>
-                    <th>Clases</th>
-                    <th>Precio</th>
-                    <th>Estado</th> 
-                    <th>Acciones</th>
-                  </tr>
-                  </thead>
-                  <tr>
-                    <td>1</td>
-                    <td>Día</td>
-                    <td>Clase,Rumba,Máquinas</td>
-                    <td>6900</td>
-                    <td>Activo</td>
                     <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
+                      <div class="form-container">
+                        <h2>Agregar Servicios</h2>
+                        <form>
+                        <label for="id_paquete">ID Servicios:</label>
+                        <input type="number" id="id_paquete" placeholder="id_paquete">
+
+                        <label for="servicios">Servicios:</label>
+                        <input type="text" id="servicios" placeholder="servicios">
+
+                        <label for="clases">Clases:</label>
+                        <input type="text" id="clases" placeholder="clases">
+
+                        <label for="precio">Precio:</label>
+                        <input type="number" id="precio" placeholder="precio">
+
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required>
+                          <option value="activo">Activo</option>
+                          <option value="inactivo">Inactivo</option>
+                        </select>
+
+                        <button type="button" class="btn btn-dark boton-registro" onclick="validarCampos()">Guardar</button>
+                        <button type="button" class="btn btn-danger boton-cancelar" href="/citas">Cancelar</button>
+
+                      </form>
+                      </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Mensualidad</td>
-                    <td>Clase,Rumba,Máquinas</td>
-                    <td>69000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Mensualidad</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,evaluación</td>
-                    <td>98000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Trimestre</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,acompañamiento,obsequio spa</td>
-                    <td>198000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Semestre</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,acompañamiento,obsequio spa</td>
-                    <td>359000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>Anualidad</td>
-                    <td>Clase,Rumba,Máquinas, nutrición,evaluación, acompañamiento</td>
-                    <td>780000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>Personalizado</td>
-                    <td>Nutrición,evaluación 3 días</td>
-                    <td>98000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>10 Masajes</td>
-                    <td>Evaluación, acompañamiento, obsequio</td>
-                    <td>298000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>5 Masajes</td>
-                    <td>Evaluación, acompañamiento, obsequio</td>
-                    <td>198000</td>
-                    <td>Activo</td>
-                    <td>
-                       <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>Terapia spa</td>
-                    <td>Nutrición</td>
-                    <td>40000</td>
-                    <td>Activo</td>
-                    <td>
-                        <a href="/editarservicios" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                        </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>Id Servicios</th>
-                      <th>Servicios</th>
-                      <th>Clases</th>
-                      <th>Precio</th>
-                      <th>Estado</th> 
-                      <th>Acciones</th>
-                    </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -444,8 +322,8 @@
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
 <script src="funcionesSer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

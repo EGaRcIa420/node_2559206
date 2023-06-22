@@ -15,12 +15,26 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
   <style>
     .btn {
       padding: 10px;
       border: none;
       cursor: pointer;
     }
+    .eliminar-btn {
+    background-color: #ff0000; /* Color de fondo rojo */
+    color: #ffffff; /* Color de texto blanco */
+    border: none;
+    padding: 5px; /* Ajusta el valor de padding para cambiar el tamaño */
+    font-size: 14px; /* Ajusta el valor de font-size para cambiar el tamaño del icono */
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .eliminar-btn i {
+    margin-right: 5px; /* Margen derecho entre el icono y el texto */
+  }
   </style>
 </head>
 
@@ -245,9 +259,13 @@
                     <td>Revision rodilla</td>
                     <td>Pendiente</td>
                     <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
-                    </td>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                            <i class="fas fa-edit fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                    
+                  </td>
                   </tr>
                   <tr>
                     <td>2</td>
@@ -258,8 +276,12 @@
                     <td>Revision tobillo</td>
                     <td>Pendiente</td>
                     <td>
-                         <button class="btn"><i class="fas fa-edit"></i></button>
-                         <button class="btn"><i class="fas fa-trash"></i></button>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                            <i class="fas fa-edit fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
                     </td>
                   </tr>
                   <tr>
@@ -271,8 +293,12 @@
                     <td>Examen de nutrición</td>
                     <td>Pendiente</td>
                     <td>
-                      <button class="btn"><i class="fas fa-edit"></i></button>
-                      <button class="btn"><i class="fas fa-trash"></i></button>
+                      <a href="/editarcita" class="btn btn-primary btn-sm">
+                        <i class="fas fa-edit fa-sm"></i>
+                      </a>
+                      <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
                     </td>
                   </tr>
                   <tr>
@@ -284,8 +310,12 @@
                     <td>Consulta lesión futbolistica</td>
                     <td>Pendiente</td>
                     <td>
-                      <button class="btn"><i class="fas fa-edit"></i></button>
-                      <button class="btn"><i class="fas fa-trash"></i></button>
+                        <a href="/editarcita" class="btn btn-primary btn-sm">
+                          <i class="fas fa-edit fa-sm"></i>
+                        </a>
+                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
                     </td>
                   </tr>
                   <tr>
@@ -297,8 +327,12 @@
                     <td>Revision de columna</td>
                     <td>Pendiente</td>
                     <td>
-                      <button class="btn"><i class="fas fa-edit"></i></button>
-                      <button class="btn"><i class="fas fa-trash"></i></button>
+                        <a href="/editarcita" class="btn btn-primary btn-sm">
+                          <i class="fas fa-edit fa-sm"></i>
+                        </a>
+                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
                     </td>
                   </tr>
                   </tbody>
@@ -347,7 +381,9 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
+<script src="funcionescitas.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

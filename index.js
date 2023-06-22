@@ -100,7 +100,13 @@ app.get('/registraragenda', (req, res)=>{
   res.render('registraragenda')
 })
 
+app.get('/editarcita', (req, res)=>{
+    res.render('editarcita')
+  })
 
+  app.get('/editarservicios', (req, res)=>{
+    res.render('editarservicios')
+  })
 app.listen(puerto,()=>{
     console.log(`Escuchando por el puerto ${puerto}`)
 })

@@ -15,6 +15,8 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
   <style>
     .btn {
       padding: 10px;
@@ -49,6 +51,14 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+    }
+
+    .boton-registro {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
+
+    .boton-cancelar {
+      margin-bottom: 10px; /* Agregar margen inferior */
     }
   </style>
 </head>
@@ -271,7 +281,9 @@
                           <option value="inactivo">Inactivo</option>
                         </select>
 
-                        <button type="button" class="btn btn-dark boton-registro" onclick="validarCampos()">Guardar</button>
+                        <button type="button" class="btn btn-success boton-registro" onclick="validarCampos()">Guardar</button>
+                        <button type="button" class="btn btn-danger boton-cancelar" href="/servicios">Cancelar</button>
+
                       </form>
                       </div>
                     </td>
@@ -311,6 +323,7 @@
 <script src="Cerrar.js"></script>
 <script src="funcionesSer.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

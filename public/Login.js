@@ -1,11 +1,21 @@
 function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    if (username === "Emmanuel" && password === "Garcia") {
-      alert("Inicio sesion exitoso");
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  if (username === "Emmanuel" && password === "Garcia") {
+    Swal.fire({
+      icon: 'success',
+      title: 'Inicio de sesión exitoso',
+      showConfirmButton: false,
+      timer: 2500
+    }).then(function () {
       window.location.href = "/home";
-    } else {
-      alert("Usuario o contraseña incorrectos");
-    }
+    });
+  } else {
+    Swal.fire({
+      icon: 'error',
+      title: 'Usuario o contraseña incorrectos',
+      showConfirmButton: false,
+      timer: 2500
+    });
   }
-    
+}
