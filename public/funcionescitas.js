@@ -1,5 +1,4 @@
 function validarCamposCita() {
-    var idCita = document.getElementById('id_cita').value;
     var nombreApellido = document.getElementById('Nombre_y_Apellido').value;
     var telefono = document.getElementById('Telefono').value;
     var fecha = document.getElementById('Fecha').value;
@@ -7,7 +6,6 @@ function validarCamposCita() {
     var restricciones = document.getElementById('Restrincciones').value;
 
     if (
-      idCita.trim() === '' ||
       nombreApellido.trim() === '' ||
       telefono.trim() === '' ||
       fecha.trim() === '' ||

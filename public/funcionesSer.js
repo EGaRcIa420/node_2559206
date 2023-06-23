@@ -1,11 +1,9 @@
 function validarCampos() {
-  var idServicio = document.getElementById('id_servicios').value;
   var servicios = document.getElementById('servicios').value;
   var clases = document.getElementById('clases').value;
   var precio = document.getElementById('precio').value;
 
   if (
-    idServicio.trim() === '' ||
     servicios.trim() === '' ||
     clases.trim() === '' ||
     precio.trim() === ''

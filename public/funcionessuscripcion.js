@@ -1,20 +1,9 @@
 function validarsuscripcion() {
-    var idSuscripciones = document.getElementById('Id_suscripciones').value;
     var idServicios = document.getElementById('Id_servicios').value;
     var regularidad = document.getElementById('Regularidad').value;
     var fechaInicio = document.getElementById('fecha_inicio').value;
     var fechaFin = document.getElementById('fecha_fin').value;
-  
-    if (idSuscripciones.trim() === '') {
-      alert('Por favor, ingrese un ID de suscripciones.');
-      return;
-    }
-  
-    if (isNaN(idSuscripciones)) {
-      alert('El ID de suscripciones debe ser un número.');
-      return;
-    }
-  
+
     if (idServicios.trim() === '') {
       alert('Por favor, ingrese un ID de servicios.');
       return;

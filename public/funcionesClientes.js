@@ -83,7 +83,7 @@ function mostrarConfirmacionCancelar() {
       // Si el usuario confirma la cancelación, redirigirss a la página de calendario
       Swal.fire('Cancelado', 'La inserción de los datos ha sido cancelado exitosamente.', 'info')
       setTimeout(() => {
-        window.location.href = "/citas";
+        window.location.href = "/clientes";
       }, 4000);
     }
   });

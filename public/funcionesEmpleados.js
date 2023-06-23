@@ -1,15 +1,9 @@
 function validarCamposEmpleados() {
-  var id_empleado = document.getElementById('id_empleado').value;
   var cedula = document.getElementById('cedula').value;
   var Nombre_de_empleado = document.getElementById('Nombre_de_empleado').value;
   var Telefono = document.getElementById('Telefono').value;
   var Correo = document.getElementById('Correo').value;
   var Hoja_de_vida = document.getElementById('Hoja_de_vida').value;
-
-  if (id_empleado === '') {
-    Swal.fire('El campo "id empleado" no puede estar vacío', '', 'error');
-    return;
-  }
 
   if (cedula === '') {
     Swal.fire('El campo "cedula" no puede estar vacío', '', 'error');
@@ -70,7 +64,7 @@ function mostrarConfirmacionCancelar() {
       // Si el usuario confirma la cancelación, redirigirss a la página de calendario
       Swal.fire('Cancelado', 'La inserción de los datos ha sido cancelado exitosamente.', 'info')
       setTimeout(() => {
-        window.location.href = "/citas";
+        window.location.href = "/empleados";
       }, 4000);
     }
   });

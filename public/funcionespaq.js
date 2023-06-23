@@ -1,12 +1,10 @@
 function validarCamposPaquete() {
-  var idPaquete = document.getElementById('id_paquete').value;
   var paquete = document.getElementById('paquete').value;
   var servicios = document.getElementById('servicios').value;
   var cantidad = document.getElementById('cantidad').value;
   var total = document.getElementById('total').value;
 
   if (
-    idPaquete === '' ||
     paquete.trim() === '' ||
     servicios.trim() === '' ||
     cantidad.trim() === '' ||
@@ -22,15 +20,6 @@ function validarCamposPaquete() {
   }
 
   // Validación de paquetes
-  if (!/^[0-9]+$/.test(idPaquete)) {
-    Swal.fire(
-      'El idPaquete de servicio solo debe contener números',
-      '',
-      'error'
-    );
-    return;
-  }
-
   if (!/^[A-Za-z0-9]+$/.test(paquete)) {
     Swal.fire(
       'El nombre de paquete solo debe contener letras y números',
@@ -113,9 +102,26 @@ function confirmarEliminacion(){
   }).then((result) => {
     if (result.isConfirmed) {
       // Aquí puedes realizar la lógica para eliminar el elemento
-      Swal.fire('Eliminado', 'La cita ha sido eliminada exitosamente.', 'success');
+      Swal.fire('Eliminado', 'El paquete ha sido eliminado exitosamente.', 'success');
     } else {
-      Swal.fire('Cancelado', 'La cita no ha sido eliminada.', 'info');
+      Swal.fire('Cancelado', 'El paquete no ha sido eliminado.', 'info');
+    }
+  });
+}
+
+function confirmarEliminacionSer(){
+  Swal.fire({
+    title: '¿Estás seguro de que deseas eliminar este elemento?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Aquí puedes realizar la lógica para eliminar el elemento
+      Swal.fire('Eliminado', 'El servicio ha sido eliminado exitosamente.', 'success');
+    } else {
+      Swal.fire('Cancelado', 'El servicio no ha sido eliminado.', 'info');
     }
   });
 }
@@ -133,8 +139,42 @@ function mostrarConfirmacionCancelar() {
       // Si el usuario confirma la cancelación, redirigirss a la página de calendario
       Swal.fire('Cancelado', 'La inserción de los datos ha sido cancelado exitosamente.', 'info')
       setTimeout(() => {
-        window.location.href = "/citas";
+        window.location.href = "/paquetes";
       }, 4000);
+    }
+  });
+}
+
+function cantidad(){
+  Swal.fire({
+    title: '¿Estás seguro de que deseas agregar esta cantidad?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, agregar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Aquí puedes realizar la lógica para eliminar el elemento
+      Swal.fire('Agregado', 'La cantidad ha sido agregada exitosamente.', 'success');
+    } else {
+      Swal.fire('Cancelado', 'La cantidad no ha sido agregada.', 'info');
+    }
+  });
+}
+
+function cantidadact(){
+  Swal.fire({
+    title: '¿Estás seguro de que deseas actualizar esta cantidad?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, agregar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Aquí puedes realizar la lógica para eliminar el elemento
+      Swal.fire('Agregado', 'La cantidad ha sido actualizada exitosamente.', 'success');
+    } else {
+      Swal.fire('Cancelado', 'La cantidad no ha sido actualizada.', 'info');
     }
   });
 }

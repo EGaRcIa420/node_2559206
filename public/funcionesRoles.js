@@ -1,14 +1,8 @@
 function validarRoles() {
-    var idRol = document.getElementById('idrol').value;
     var idUsuario = document.getElementById('id_usuario').value;
     var nombreRol = document.getElementById('Nombre_rol').value;
     var permisos = document.getElementById('Permisos').value;
-  
-    if (idRol.trim() === '') {
-      alert('Por favor, ingrese un ID de Rol.');
-      return;
-    }
-  
+
     if (isNaN(idRol)) {
       alert('El ID de Rol debe ser un número.');
       return;
