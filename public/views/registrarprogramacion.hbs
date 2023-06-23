@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
 </head>
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -108,21 +111,45 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard Proyecto</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/suscripciones" class="nav-link ">
+                <a href="/usuarios" class="nav-link">
                     <i class="fas fa-user"></i>
-                    <p>Suscripciones</p>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Calendario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link active">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -144,29 +171,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link active">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
+                <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
-                    <p>Clientes</p>
+                    <p>Suscripciones</p>
                 </a>
-            </li>
+              </li>
             </ul>
           </li>
         </ul>
@@ -187,7 +196,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Calendar</li>
             </ol>
           </div>
@@ -239,7 +248,9 @@
                   </select>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Agregar</button>
+                  <button type="button" class="btn btn-success" onclick="ingresoExitoso()">Agregar</button>
+                 <button type="button" class="btn btn-danger" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+                  
                 </div>
               </div>
             </form>
@@ -254,6 +265,32 @@
                   this.value = "";
                 }
               });
+
+              function ingresoExitoso() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Se ha agregado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+  })
+  }
+  
+  function mostrarConfirmacionCancelar() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Si cancelas, se perderán los datos ingresados.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No, volver'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma la cancelación, redirigirss a la página de calendario
+        window.location.href = 'calendario';
+      }
+    });
+  }
+        
               
               document.getElementById("horaFinal").addEventListener("change", function() {
                 var horaInicio = document.getElementById("horaInicio").value;
@@ -264,6 +301,31 @@
                   this.value = "";
                 }
               });
+
+              function ingresoExitoso() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Se ha agregado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+  })
+  }
+  
+  function mostrarConfirmacionCancelar() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Si cancelas, se perderán los datos ingresados.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No, volver'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma la cancelación, redirigirss a la página de calendario
+        window.location.href = 'calendario';
+      }
+    });
+  }
             </script>
             </div>
       
@@ -298,7 +360,8 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<script src="Cerrar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->

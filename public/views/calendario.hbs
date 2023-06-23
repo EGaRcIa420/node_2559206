@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
+
   <style>
     .btn {
       padding: 10px;
@@ -116,21 +118,45 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard Proyecto</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/suscripciones" class="nav-link ">
+                <a href="/usuarios" class="nav-link">
                     <i class="fas fa-user"></i>
-                    <p>Suscripciones</p>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link active">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Calendario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -152,29 +178,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link active">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
+                <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
-                    <p>Clientes</p>
+                    <p>Suscripciones</p>
                 </a>
-            </li>
+              </li>
             </ul>
           </li>
         </ul>
@@ -196,7 +204,7 @@
           <div class="col-sm-6">
             
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Calendario</li>
             </ol>
           </div>
@@ -266,7 +274,10 @@
           
           <div class="col-md-9">
             <a type="button" class="btn btn-primary" href="/registraragenda">Agregar Agenda</a>
+            <button class="btn btn-success"><i class="fas fa-search fa-fw"></i> Buscar</button> 
+          <button class="btn btn-secondary"> <i class="fa fa-arrow-down" aria-hidden="true"></i> Descarga</button>
             <div class="card card-primary">
+              
               <div class="card-body p-0">
                 <!-- THE CALENDAR -->
                 <div id="calendar"></div>
@@ -298,6 +309,8 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script src="Cerrar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 
 <!-- jQuery -->
 <script src="../plugins/jquery/jquery.min.js"></script>

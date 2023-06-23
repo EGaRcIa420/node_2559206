@@ -22,7 +22,7 @@
       border: none;
       cursor: pointer;
     }
-    .eliminar-btn {
+    .btn btn-danger btn-sm {
     background-color: #ff0000; /* Color de fondo rojo */
     color: #ffffff; /* Color de texto blanco */
     border: none;
@@ -32,7 +32,7 @@
     cursor: pointer;
   }
 
-  .eliminar-btn i {
+  .btn btn-danger btn-sm i {
     margin-right: 5px; /* Margen derecho entre el icono y el texto */
   }
   </style>
@@ -134,21 +134,45 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard Proyecto</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/suscripciones" class="nav-link ">
+                <a href="/usuarios" class="nav-link">
                     <i class="fas fa-user"></i>
-                    <p>Suscripciones</p>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Calendario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -170,29 +194,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
+                <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
-                    <p>Clientes</p>
+                    <p>Suscripciones</p>
                 </a>
-            </li>
+              </li>
             </ul>
           </li>
         </ul>
@@ -262,7 +268,7 @@
                           <a href="/editarcita" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
-                          <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>                    
                   </td>
@@ -279,7 +285,7 @@
                           <a href="/editarcita" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
-                          <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>                     
                     </td>
@@ -296,7 +302,7 @@
                       <a href="/editarcita" class="btn btn-primary btn-sm">
                         <i class="fas fa-edit fa-sm"></i>
                       </a>
-                      <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                      <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>                     
                     </td>
@@ -313,7 +319,7 @@
                         <a href="/editarcita" class="btn btn-primary btn-sm">
                           <i class="fas fa-edit fa-sm"></i>
                         </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                        <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>                     
                     </td>
@@ -330,24 +336,12 @@
                         <a href="/editarcita" class="btn btn-primary btn-sm">
                           <i class="fas fa-edit fa-sm"></i>
                         </a>
-                        <button onclick="confirmarEliminacion()" class="eliminar-btn">
+                        <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>                     
                     </td>
                   </tr>
                   </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>ID Citas</th>
-                      <th>Nombre y Apellido</th>
-                      <th>Telefono</th>
-                      <th>Fecha</th>
-                      <th>Hora</th>
-                      <th>Restrincciones</th>
-                      <th>Estado</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->

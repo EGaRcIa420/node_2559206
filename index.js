@@ -104,9 +104,26 @@ app.get('/editarcita', (req, res)=>{
     res.render('editarcita')
   })
 
-  app.get('/editarservicios', (req, res)=>{
+app.get('/editarservicios', (req, res)=>{
     res.render('editarservicios')
-  })
+})
+
+app.get('/usuarios',(req,res)=>{
+    res.render('usuarios')
+})
+
+app.get('/editarpaquetes', (req, res)=>{
+    res.render('editarpaquetes')
+})
+
+app.get('/registrarse', (req, res)=>{
+    res.render('registrarse')
+})
+
+app.get('/recuperarcontra', (req, res)=>{
+    res.render('recuperarcontra')
+})
+
 app.listen(puerto,()=>{
     console.log(`Escuchando por el puerto ${puerto}`)
 })

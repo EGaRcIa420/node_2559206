@@ -121,3 +121,22 @@ function validarCamposCita() {
       }
     });
   }
+
+  function mostrarConfirmacionCancelar() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Si cancelas, se perderán los datos ingresados.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No, volver'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma la cancelación, redirigirss a la página de calendario
+        Swal.fire('Cancelado', 'La inserción de los datos ha sido cancelado exitosamente.', 'info')
+        setTimeout(() => {
+          window.location.href = "/citas";
+        }, 4000);
+      }
+    });
+  }

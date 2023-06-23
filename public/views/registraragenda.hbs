@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -76,7 +80,7 @@
           <img src="https://t1.uc.ltmcdn.com/es/posts/5/8/6/cuantas_calorias_se_queman_en_el_gym_48685_orig.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Emmanuel García</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -107,21 +111,45 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard Proyecto</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/suscripciones" class="nav-link ">
+                <a href="/usuarios" class="nav-link">
                     <i class="fas fa-user"></i>
-                    <p>Suscripciones</p>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link active">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Calendario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -143,29 +171,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link active">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
+                <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
-                    <p>Clientes</p>
+                    <p>Suscripciones</p>
                 </a>
-            </li>
+              </li>
             </ul>
           </li>
         </ul>
@@ -186,7 +196,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
               <li class="breadcrumb-item active">Calendar</li>
             </ol>
           </div>
@@ -235,8 +245,11 @@
         <option value="no">No</option>
       </select>
     </div>
+    <div class="form-group">
+      <label for="horario_lab">Horario Laboral:  8am - 10pm </label>
     <div class="card-footer">
-      <a type="button" href="/" class="btn btn-success">Agregar</a>
+      <button type="button" class="btn btn-success" onclick="ingresoExitoso()">Agregar</button>
+       <button type="button" class="btn btn-danger" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
     </div>
   </div>
 </form>
@@ -251,7 +264,32 @@
       this.value = "";
     }
   });
+
+  function ingresoExitoso() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Se ha agregado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+  })
+  }
   
+  function mostrarConfirmacionCancelar() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Si cancelas, se perderán los datos ingresados.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No, volver'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma la cancelación, redirigirss a la página de calendario
+        window.location.href = 'calendario';
+      }
+    });
+  }
+
   document.getElementById("horaFinal").addEventListener("change", function() {
     var horaInicio = document.getElementById("horaInicio").value;
     var horaFinal = this.value;
@@ -297,6 +335,8 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
+<script src="Cerrar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

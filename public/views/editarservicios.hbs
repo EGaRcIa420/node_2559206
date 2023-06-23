@@ -159,21 +159,45 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard Proyecto</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/suscripciones" class="nav-link ">
+                <a href="/usuarios" class="nav-link">
                     <i class="fas fa-user"></i>
-                    <p>Suscripciones</p>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Calendario</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -195,29 +219,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
+                <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
-                    <p>Clientes</p>
+                    <p>Suscripciones</p>
                 </a>
-            </li>
+              </li>
             </ul>
           </li>
         </ul>
@@ -270,7 +276,15 @@
                         <input type="text" id="servicios" placeholder="servicios">
 
                         <label for="clases">Clases:</label>
-                        <input type="text" id="clases" placeholder="clases">
+                        <select id="clases" name="clases" required>
+                          <option id="clases" name="clases">Seleccionar las clases</option>
+                          <option value="Maquina, Clases, Spinning">Maquina, Clases, Spinning</option>
+                          <option value="Spa, Nutricion, Clases, Maquinas">Spa, Nutricion, Clases, Maquinas</option>
+                          <option value="Maquinas, Rumba, Spa, Clases ">Maquinas, Rumba, Spa, Clases </option>
+                          <option value="Nutricion, Clases, Maquinas">Nutricion, Clases, Maquinas</option>
+                          <option value="Acompañamiento, Rumba, Spinning, Maquinas">Acompañamiento, Rumba, Spinning, Maquinas</option>
+                          <option value="Acompañamiento, Nutricion, Evaluacion, Maquinas , Clases">Acompañamiento, Nutricion, Evaluacion, Maquinas , Clases</option>
+                        </select>
 
                         <label for="precio">Precio:</label>
                         <input type="number" id="precio" placeholder="precio">
@@ -280,9 +294,9 @@
                           <option value="activo">Activo</option>
                           <option value="inactivo">Inactivo</option>
                         </select>
-
-                        <button type="button" class="btn btn-dark boton-registro" onclick="validarCampos()">Guardar</button>
-                        <button type="button" class="btn btn-danger boton-cancelar" href="/citas">Cancelar</button>
+                        <br><br>
+                        <button type="button" class="btn btn-success boton-registro" onclick="validarCampos()">Guardar</button>
+                        <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
 
                       </form>
                       </div>
