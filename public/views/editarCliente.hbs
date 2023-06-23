@@ -22,9 +22,47 @@
       border: none;
       cursor: pointer;
     }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .boton-registro {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
+
+    .boton-cancelar {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
     
   </style>
 </head>
+
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
@@ -194,20 +232,20 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-</nav>  
-<!-- Content Wrapper. Contains page content -->
+</nav>
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tabla Clientes</h1>
+            <h1>Tabla clientes</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Tabla Clientes</li>
+              <li class="breadcrumb-item active">clientes</li>
             </ol>
           </div>
         </div>
@@ -221,83 +259,49 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Listado de Clientes</h3>
-              </div>
-              <div class="col-lg-12">
-                <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarClientes">
-                    Nuevo Cliente</a></i></button>
+                <h3 class="card-title">Actualizar clientes</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Id cliente</th>
-                            <th>Cedula</th>
-                            <th>Nombre de cliente</th>
-                            <th>Telefono</th>
-                            <th>Fecha de inicio</th>
-                            <th>Correo</th>
-                            <th>Restrincciones</th>
-                            <th>Estado</th>                                            
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>543216789</td>
-                            <td>Carlos Rodríguez</td>
-                            <td>543216789</td>
-                            <td>01/03/2022</td>
-                            <td>carlos.rodriguez@example.com</td>
-                            <td>ninguno</td>
-                            <td>Inactivo</td>
-                            <td>
-                          <a href="/editarCliente" class="btn btn-primary btn-sm">
-                            <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                          </td>
-                            <tr>
-                                <td>2</td>
-                                <td>9876543210</td>
-                                <td>Ana Penelope García</td>
-                                <td>987654321</td>
-                                <td>02/05/2020</td>
-                                <td>ana.garcia@example.com</td> 
-                                <td>Fatiga muscular</td>
-                                <td>Activo</td>
-                                <td>
-                          <a href="/editarCliente" class="btn btn-primary btn-sm">
-                            <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                  </td>
-                            <tr>
-                                <td>3</td>
-                                <td>9377472437</td>
-                                <td>Cristiano Palacios</td>
-                                <td>987654321</td>
-                                <td>03/07/2023</td>
-                                <td>ana.garcia@example.com</td> 
-                                <td>Fatiga muscular</td>
-                                <td>Activo</td>
-                                <td>
-                          <a href="/editarCliente" class="btn btn-primary btn-sm">
-                            <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                  </td>
-                    </tbody>
+                <table>
+                    <tr>
+                    <td>
+                        <div  class="form-container">
+                        <h2>Actualizar clientes</h2>
+                        <form>
+                            <label for="id_cliente">ID cliente:</label>
+                            <input type="number" id="id_cliente" placeholder="id cliente" >
+
+                            <label for="cedula">Cedula:</label>
+                            <input type="number" id="cedula" placeholder="Cedula" >
+
+                            <label for="Nombre_de_cliente">Nombre de cliente:</label>
+                            <input type="text" id="Nombre_de_cliente" placeholder="Nombre de cliente" >
+
+                            <label for="Telefono">Telefono:</label>
+                            <input type="number" id="Telefono" placeholder="Telefono" >
+
+                            <label for="Fecha">Fecha de inicio:</label>
+                            <input type="date" id="Fecha" placeholder="Fecha" >
+
+                            <label for="correo">Correo:</label>
+                            <input type="texto" id="correo" placeholder="Correo" >
+
+                            <label for="Restrincciones">Restrincciones:</label>
+                            <input type="text" id="Restrincciones" placeholder="Restrincciones" >
+
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" required>
+                              <option value="true">activo</option>
+                              <option value="false">inactivo</option>
+                            </select><br><br>
+                            <button type="button" class="btn btn-success boton-registro" onclick="validarCamposClientes()">Guardar</button>
+                            <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
                     
+                        </form>
+                        </div>
+                            </td>
+                    </tr>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -331,10 +335,9 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
-<script src="funcionesCLientes.js"></script>
-
+<script src="funcionesClientes.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

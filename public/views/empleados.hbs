@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PROYECTO | T.H.O.R</title>
-
+  <title>AdminLTE 3 | DataTables</title>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
   <style>
@@ -22,6 +22,7 @@
       border: none;
       cursor: pointer;
     }
+    
   </style>
 </head>
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -174,7 +175,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/paquetes" class="nav-link">
+                <a href="/paquetes" class="nav-link ">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
                 </a>
@@ -232,57 +233,67 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>N°</th>
-                            <th>cedula</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
+                            <th>Id empleado</th>
+                            <th>Cedula</th>
+                            <th>Nombre de empleado</th>
                             <th>Telefono</th>
-                            <th>Direccion</th>
+                            <th>Correo</th>
+                            <th>Hoja de vida</th>
                             <th>Estado</th>                                            
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                         <tr>
+                        <tr>
                             <td>1</td>
-                            <td>202020</td>
-                            <td>Deimer Palomo</td>
-                            <td>deimer@gmail.com</td>
-                            <td>Calle 2020</td>
-                            <td>3057692715</td>
-                            <td>Activo</td>
-                            <td>
-                                <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>303030</td>
-                            <td>Luisa López</td>
-                            <td>luisa@gmail.com</td>
-                            <td>Calle 3030</td>
-                            <td>1234567890</td>
-                            <td>Activo</td>
-                            <td>
-                                <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>404040</td>
-                            <td>Pedro Martínez</td>
-                            <td>pedro@gmail.com</td>
-                            <td>Avenida 4040</td>
-                            <td>9876543210</td>
+                            <td>543216789</td>
+                            <td>Carlos Rodríguez</td>
+                            <td>543216789</td>
+                            <td>carlos.rodriguez@example.com</td>
+                            <td><i class="fas fa-file-alt"></i></td>
                             <td>Inactivo</td>
                             <td>
-                                <button class="btn"><i class="fas fa-edit"></i></button>
-                                <button class="btn"><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
+                          <a href="/editarEmpleado" class="btn btn-primary btn-sm">
+                            <i class="fas fa-edit fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                    
+                          </td>
+                            <tr>
+                                <td>2</td>
+                            <td>736363636</td>
+                            <td>Radamel yunsuy</td>
+                            <td>9837333</td>
+                            <td>Radamel@example.com</td>
+                            <td><i class="fas fa-file-alt"></i></td>
+                            <td>Inactivo</td>
+                                <td>
+                          <a href="/editarEmpleado" class="btn btn-primary btn-sm">
+                            <i class="fas fa-edit fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                    
+                  </td>
+                            <tr>
+                                <td>3</td>
+                            <td>37363533663</td>
+                            <td>Pachito Maturana</td>
+                            <td>543216789</td>
+                            <td>Pachito@example.com</td>
+                            <td><i class="fas fa-file-alt"></i></td>
+                            <td>Inactivo</td>
+                                <td>
+                          <a href="/editarEmpleado" class="btn btn-primary btn-sm">
+                            <i class="fas fa-edit fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                    
+                  </td>
                     </tbody>
+                    
                 </table>
               </div>
               <!-- /.card-body -->
@@ -316,8 +327,11 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+<script src="funcionesEmpleados.js"></script>
+
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

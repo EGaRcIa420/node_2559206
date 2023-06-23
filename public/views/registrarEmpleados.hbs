@@ -204,7 +204,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/paquetes" class="nav-link">
+                <a href="/paquetes" class="nav-link ">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
                 </a>
@@ -250,82 +250,47 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Agregar Empleado</h3>
+                <h3 class="card-title">Agregar empleado</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table>
                     <tr>
                     <td>
-                        <div class="form-container">
-                        <h2>Agregar Empleado</h2>
-                        <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="cedula">Cedula</label>
-                                        <input type="cedula" class="form-control" id="cedula"
-                                            placeholder="Cedula cliente" style="width: 100%;" />
-                                    </div>
-                                   <div class="texto2" id="texto2"></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="nombre">Nombre y Apellidos</label>
-                                        <input type="nombre" class="form-control" id="nombre"
-                                            placeholder="Nombre cliente" style="width: 100%;" />
-                                    </div>
-                                    <div class="texto" id="texto"></div>
-                                </div>
-                                <!-- /.form-group -->
-                            </div>
+                        <div  class="form-container">
+                        <h2>Registrar empleado</h2>
+                        <form>
+                            <label for="id_empleado">ID empleado:</label>
+                            <input type="number" id="id_empleado" placeholder="id empleado" >
 
-                            <!-- /.col -->
-                            <div class="row">
+                            <label for="cedula">Cedula:</label>
+                            <input type="number" id="cedula" placeholder="Cedula" >
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="correo">Correo</label>
-                                        <input type="correo" class="form-control" id="correo"
-                                            placeholder="Correo cliente" style="width: 100%;" />
-                                    </div>
-                                    <div class="texto3" id="texto3"></div>
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="col-md-6">
+                            <label for="Nombre_de_empleado">Nombre de empleado:</label>
+                            <input type="text" id="Nombre_de_empleado" placeholder="Nombre de empleado" >
 
-                                    <div class="form-group">
-                                        <label for="direccion">Direccion</label>
-                                        <input type="direccion" class="form-control" id="direccion"
-                                            placeholder="Direccion cliente" style="width: 100%;" />
-                                    </div>
-                                    <div class="texto4" id="texto4"></div>
-                                </div>
-                                <!-- /.form-group -->
-                 
-                            </div>
+                            <label for="Telefono">Telefono:</label>
+                            <input type="number" id="Telefono" placeholder="Telefono" >
 
-                            <div class="row">
+                            <label for="Correo">Correo:</label>
+                            <input type="texto" id="Correo" placeholder="Correo" >
 
-                                <!-- /.col -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="telefono">Telefono</label>
-                                        <input type="telefono" class="form-control" id="telefono"
-                                            placeholder="Telefono cliente" style="width: 100%;" />
-                                        
-                                    </div>
-                                    <div class="texto5" id="texto5"></div>
-                                    </br>
-                                    <!-- /.form-group -->
-                                </div>
-                               
-                                 <div class="row"></div>
-                                    <div class="col-lg-12">
-                                            
-                            <input class="sendbtn btn btn-dark" id="sendbtn" type="button" value="Guardar" onclick= validateForm()>
+                            <form>
+                            <label for="Hoja_de_vida">Subir hoja de vida:</label>
+                            <input type="file" id="Hoja_de_vida" name="Hoja de vida">
+                            <!--<button type="submit">Enviar</button>-->
+                            </form>
+
+                            <label for="Estado">Estado:</label>
+                            <select id="Estado" name="Estado" required>
+                              <option value="true">activo</option>
+                              <option value="false">inactivo</option>
+                            </select><br><br>
+                            <button type="button" class="btn btn-success boton-registro" onclick="validarCamposEmpleados()">Guardar</button>
+                            <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
                         </form>
                         </div>
-                    </td>
+                            </td>
                     </tr>
                 </table>
               </div>
@@ -360,9 +325,10 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <script src="funcionesEmpleados.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

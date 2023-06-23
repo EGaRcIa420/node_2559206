@@ -180,7 +180,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/calendario" class="nav-link">
+                <a href="/calendario" class="nav-link ">
                   <i class="far fa-calendar-alt"></i>
                   <p>Calendario</p>
                 </a>
@@ -204,7 +204,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/paquetes" class="nav-link">
+                <a href="/paquetes" class="nav-link ">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
                 </a>
@@ -257,75 +257,42 @@
                 <table>
                     <tr>
                     <td>
-                        <div class="form-container">
-                        <h2>Agregar Cliente</h2>
-                        <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="cedula">Cedula</label>
-                                        <input type="cedula" class="form-control" id="cedula"
-                                            placeholder="Cedula cliente" style="width: 100%;" />
-                                    </div>
-                                   <div class="texto2" id="texto2"></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="nombre">Nombre y Apellidos</label>
-                                        <input type="nombre" class="form-control" id="nombre"
-                                            placeholder="Nombre cliente" style="width: 100%;" />
-                                    </div>
-                                    <div class="texto" id="texto"></div>
-                                </div>
-                                <!-- /.form-group -->
-                            </div>
+                        <div  class="form-container">
+                        <h2>Registrar clientes</h2>
+                        <form>
+                            <label for="id_cliente">ID cliente:</label>
+                            <input type="number" id="id_cliente" placeholder="id cliente" >
 
-                            <!-- /.col -->
-                            <div class="row">
+                            <label for="cedula">cedula:</label>
+                            <input type="number" id="cedula" placeholder="cedula" >
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="correo">Correo</label>
-                                        <input type="correo" class="form-control" id="correo"
-                                            placeholder="Correo cliente" style="width: 100%;" />
-                                    </div>
-                                    <div class="texto3" id="texto3"></div>
-                                </div>
-                                <!-- /.form-group -->
-                                <div class="col-md-6">
+                            <label for="Nombre_de_cliente">Nombre de cliente:</label>
+                            <input type="text" id="Nombre_de_cliente" placeholder="Nombre de cliente" >
 
-                                    <div class="form-group">
-                                        <label for="direccion">Direccion</label>
-                                        <input type="direccion" class="form-control" id="direccion"
-                                            placeholder="Direccion cliente" style="width: 100%;" />
-                                    </div>
-                                    <div class="texto4" id="texto4"></div>
-                                </div>
-                                <!-- /.form-group -->
-                 
-                            </div>
+                            <label for="Telefono">Telefono:</label>
+                            <input type="number" id="Telefono" placeholder="Telefono" >
 
-                            <div class="row">
+                            <label for="Fecha">Fecha de inicio:</label>
+                            <input type="date" id="Fecha" placeholder="Fecha" >
 
-                                <!-- /.col -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="telefono">Telefono</label>
-                                        <input type="telefono" class="form-control" id="telefono"
-                                            placeholder="Telefono cliente" style="width: 100%;" />
-                                        
-                                    </div>
-                                    <div class="texto5" id="texto5"></div>
-                                    </br>
-                                    <!-- /.form-group -->
-                                </div>
-                               
-                                 <div class="row"></div>
-                                    <div class="col-lg-12">
-                                            
-                            <input class="sendbtn btn btn-dark" id="sendbtn" type="button" value="Guardar" onclick= validateForm()>
+                            <label for="correo">correo:</label>
+                            <input type="texto" id="correo" placeholder="correo" >
+
+                            <label for="Restrincciones">Restrincciones:</label>
+                            <input type="text" id="Restrincciones" placeholder="Restrincciones" >
+
+                            <label for="estado">Estado:</label>
+                            <select id="estado" name="estado" required>
+                              <option value="true">activo</option>
+                              <option value="false">inactivo</option>
+                            </select><br><br>   
+                            
+                            <button type="button" class="btn btn-success boton-registro" onclick="validarCamposClientes()">Guardar</button>
+                            <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+                    
                         </form>
                         </div>
-                    </td>
+                        </td>
                     </tr>
                 </table>
               </div>
@@ -360,9 +327,10 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <script src="funcionesClientes.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

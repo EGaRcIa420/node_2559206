@@ -25,6 +25,7 @@
     
   </style>
 </head>
+
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
@@ -90,7 +91,7 @@
           <img src="https://t1.uc.ltmcdn.com/es/posts/5/8/6/cuantas_calorias_se_queman_en_el_gym_48685_orig.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Emmanuel García</a>
+          <a href="#" class="d-block">Emmanuel García </a>
         </div>
       </div>
 
@@ -127,13 +128,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/usuarios" class="nav-link">
+                <a href="/usuarios" class="nav-link active">
                     <i class="fas fa-user"></i>
                   <p>Usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/clientes" class="nav-link active">
+                <a href="/clientes" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Clientes</p>
                 </a>
@@ -194,20 +195,20 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-</nav>  
-<!-- Content Wrapper. Contains page content -->
+</nav>
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tabla Clientes</h1>
+            <h1>Tabla usuarios</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Tabla Clientes</li>
+              <li class="breadcrumb-item active">Tabla usuarios</li>
             </ol>
           </div>
         </div>
@@ -221,83 +222,103 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Listado de Clientes</h3>
+                <h3 class="card-title">Listado de usuarios</h3>
               </div>
               <div class="col-lg-12">
                 <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarClientes">
-                    Nuevo Cliente</a></i></button>
+                    <a class="btn btn-dark boton-registro" href="/registrarUsuarios">
+                    Nuevo usuario</a></i></button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Id cliente</th>
-                            <th>Cedula</th>
-                            <th>Nombre de cliente</th>
-                            <th>Telefono</th>
-                            <th>Fecha de inicio</th>
-                            <th>Correo</th>
-                            <th>Restrincciones</th>
-                            <th>Estado</th>                                            
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>543216789</td>
-                            <td>Carlos Rodríguez</td>
-                            <td>543216789</td>
-                            <td>01/03/2022</td>
-                            <td>carlos.rodriguez@example.com</td>
-                            <td>ninguno</td>
-                            <td>Inactivo</td>
-                            <td>
-                          <a href="/editarCliente" class="btn btn-primary btn-sm">
-                            <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                          </td>
-                            <tr>
-                                <td>2</td>
-                                <td>9876543210</td>
-                                <td>Ana Penelope García</td>
-                                <td>987654321</td>
-                                <td>02/05/2020</td>
-                                <td>ana.garcia@example.com</td> 
-                                <td>Fatiga muscular</td>
-                                <td>Activo</td>
-                                <td>
-                          <a href="/editarCliente" class="btn btn-primary btn-sm">
+                  <thead>
+                  <tr>
+                    <th>ID usuario</th>
+                    <th>Nombre de usuario</th>
+                    <th>Tipo de usuario</th>
+                    <th>Correo de usuario</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                  </thead>
+                  <tr>
+                    <td>1</td>
+                    <td>Emmanuel García </td>
+                    <td>Administrador</td>
+                    <td>juaquin@hotmail.com</td>
+                    <td>activo</td>
+                    <td>
+                          <a href="/editarUsuario" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
                           <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>                    
                   </td>
-                            <tr>
-                                <td>3</td>
-                                <td>9377472437</td>
-                                <td>Cristiano Palacios</td>
-                                <td>987654321</td>
-                                <td>03/07/2023</td>
-                                <td>ana.garcia@example.com</td> 
-                                <td>Fatiga muscular</td>
-                                <td>Activo</td>
-                                <td>
-                          <a href="/editarCliente" class="btn btn-primary btn-sm">
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Marcos Gómez</td>
+                    <td>Cliente</td>
+                    <td>marcos@hotmail.com</td>
+                    <td>activo</td>
+                    <td>
+                          <a href="/editarUsuario" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
                           <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                  </td>
-                    </tbody>
-                    
+                          </button>                     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Juaquin Gómez</td>
+                    <td>Empleado</td>
+                    <td>juaquin@hotmail.com</td>
+                    <td>activo</td>
+                    <td>
+                      <a href="/editarUsuario" class="btn btn-primary btn-sm">
+                        <i class="fas fa-edit fa-sm"></i>
+                      </a>
+                      <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Amparo Giza</td>
+                    <td>Cliente</td>
+                    <td>amparo@hotmail.com</td>
+                    <td>activo</td>
+                    <td>
+                          <a href="/editarUsuario" class="btn btn-primary btn-sm">
+                          <i class="fas fa-edit fa-sm"></i>
+                        </a>
+                        <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Aida mercedes</td>
+                    <td>Administrador</td>
+                    <td>Aida@hotmail.com</td>
+                    <td>activo</td>
+                    <td>
+                          <a href="/editarUsuario" class="btn btn-primary btn-sm">
+                          <i class="fas fa-edit fa-sm"></i>
+                        </a>
+                        <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>                     
+                    </td> 
+                  </tr>
+                  </tbody>
+                  
                 </table>
               </div>
               <!-- /.card-body -->
@@ -331,11 +352,9 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
-<script src="funcionesCLientes.js"></script>
-
+<script src="funcionesUsuarios.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
-
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->

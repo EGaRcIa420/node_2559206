@@ -124,6 +124,22 @@ app.get('/recuperarcontra', (req, res)=>{
     res.render('recuperarcontra')
 })
 
+app.get('/editarUsuario', (req, res)=>{
+    res.render('editarUsuario')
+})
+
+app.get('/registrarUsuarios', (req, res)=>{
+    res.render('registrarUsuarios')
+})
+
+app.get('/editarCliente', (req, res)=>{
+   res.render('editarCliente')
+})
+
+app.get('/editarEmpleado', (req, res)=>{
+   res.render('editarEmpleado')
+})
+
 app.listen(puerto,()=>{
     console.log(`Escuchando por el puerto ${puerto}`)
 })

@@ -1,150 +1,77 @@
+function validarCamposEmpleados() {
+  var id_empleado = document.getElementById('id_empleado').value;
+  var cedula = document.getElementById('cedula').value;
+  var Nombre_de_empleado = document.getElementById('Nombre_de_empleado').value;
+  var Telefono = document.getElementById('Telefono').value;
+  var Correo = document.getElementById('Correo').value;
+  var Hoja_de_vida = document.getElementById('Hoja_de_vida').value;
 
-const validateForm = () => {
-  const validateNombreResult = validateNombre();
-  const validateCedulaResult = validateCedula();
-  const validateCorreoResult = validateCorreo();
-  const validateDireccionResult = validateDireccion();
-  const validateTelefonoResult = validateTelefono();
-
-    console.log("validate nombre " , validateNombre);
-
-    if (validateNombreResult && validateCedulaResult && validateCorreoResult && validateDireccionResult && validateTelefonoResult) {
-      window.location.href = "/empleados";
-    }
+  if (id_empleado === '') {
+    Swal.fire('El campo "id empleado" no puede estar vacío', '', 'error');
+    return;
   }
-const validateNombre = () => {
-    let nombre = document.getElementById('nombre').value;
-    let texto;
-    let expresion = /[a-zA-Z]/;
-  
-    if (nombre === null || nombre === '' || nombre.length === 0) {
-     
-      texto = '<span>Ingrese su nombre</span>';
-      document.getElementById('texto').innerHTML = texto;
-      return false;
-    } else if (nombre.length < 3) {
-      
-      texto = '<span>Tiene que ser mayor o igual a 3 caracteres</span>';
-      document.getElementById('texto').innerHTML = texto;
-      return false;
-    } else if (!expresion.test(nombre)) {
-      
-      texto = '<span >Ingrese solo caracteres válidos(Letras)</span>';
-      document.getElementById('texto').innerHTML = texto;
-      return false;
+
+  if (cedula === '') {
+    Swal.fire('El campo "cedula" no puede estar vacío', '', 'error');
+    return;
+  }
+
+  if (Nombre_de_empleado === '') {
+    Swal.fire('El campo "Nombre de empleado" no puede estar vacío', '', 'error');
+    return;
+  }
+
+  if (Telefono === '') {
+    Swal.fire('El campo "Telefono" no puede estar vacío', '', 'error');
+    return;
+  }
+
+  if (Correo === '') {
+    Swal.fire('El campo "Correo" no puede estar vacío', '', 'error');
+    return;
+  }
+
+  if (Hoja_de_vida === '') {
+    Swal.fire('El campo "Hoja_de_vida" no puede estar vacío', '', 'error');
+    return;
+  }
+
+  Swal.fire('Guardado exitosamente', '', 'success');
+  window.location.href = '/empleados';
+}
+
+function confirmarEliminacion() {
+  Swal.fire({
+    title: '¿Estás seguro de que deseas eliminar este elemento?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Aquí puedes realizar la lógica para eliminar el elemento
+      Swal.fire('Eliminado', 'El empleado ha sido eliminado exitosamente.', 'success');
     } else {
-      
-      document.getElementById('texto').innerHTML = '';
-      return true;
-
+      Swal.fire('Cancelado', 'El empleado no ha sido eliminado.', 'info');
     }
-   
-  }; 
+  });
+}
 
-  const validateCorreo = () => {
-    let correo = document.getElementById('correo').value.trim();
-    let texto;
-    let expresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
-    if (!correo) {
-      
-        texto = '<span>Ingrese su dirección de correo electrónico.</span>';
-        document.getElementById('texto3').innerHTML = texto;
-        return false;
-    } else if (!expresion.test(correo)) {
-        texto = '<span >Ingrese una dirección de correo electrónico válida.</span>';
-        document.getElementById('texto3').innerHTML = texto;
-        return false;
-    }else {
-      document.getElementById('texto3').innerHTML = '';
-      return true;
-
+function mostrarConfirmacionCancelar() {
+  Swal.fire({
+    title: '¿Estás seguro?',
+    text: 'Si cancelas, se perderán los datos ingresados.',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, cancelar',
+    cancelButtonText: 'No, volver'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Si el usuario confirma la cancelación, redirigirss a la página de calendario
+      Swal.fire('Cancelado', 'La inserción de los datos ha sido cancelado exitosamente.', 'info')
+      setTimeout(() => {
+        window.location.href = "/citas";
+      }, 4000);
     }
-
-  
-};
-
-const validateDireccion = () => {
-    let direccion = document.getElementById('direccion').value.trim();
-    let texto;
-    let expresion = /^[a-zA-Z0-9\s'#,-]*$/;
-  
-    if (!direccion) {
-        texto = '<span >Ingrese su dirección de residencia.</span>';
-        document.getElementById('texto4').innerHTML = texto;
-        return false;
-    } else if (direccion.length < 5) {
-        texto = '<span>Su dirección de residencia debe tener al menos 5 caracteres.</span>';
-        document.getElementById('texto4').innerHTML = texto;
-        return false;
-    } else if (!expresion.test(direccion)) {
-        texto = '<span >Ingrese una dirección de residencia válida.</span>';
-        document.getElementById('texto4').innerHTML = texto;
-        return false;
-    }else{
-      document.getElementById('texto4').innerHTML = '';
-      return true;
-
-    }
-    
-    
-};
-
-const validateTelefono = () => {
-    let telefono = document.getElementById('telefono').value.trim();
-    let texto;
-    let expresion = /^[0-9]+$/;
-  
-    if (!telefono) {
-        texto = '<span >Ingrese su número de teléfono.</span>';
-        document.getElementById('texto5').innerHTML = texto;
-        return false;
-    } else if (telefono.length < 10) {
-        texto = '<span >Su número de teléfono debe tener al menos 10 dígitos.</span>';
-        document.getElementById('texto5').innerHTML = texto;
-        return false;
-    } else if (!expresion.test(telefono)) {
-        texto = '<span >Ingrese solo números en su número de teléfono.</span>';
-        document.getElementById('texto5').innerHTML = texto;
-        return false;
-    }else{
-      document.getElementById('texto5').innerHTML = '';
-      return true;
-    }
-   
-   
-};
-
-  const validateCedula = () => {
-    let cedula = document.getElementById('cedula').value;
-    let texto;
-    let expresion = /[0-9]/;
-  
-    if (cedula === null || cedula === '' || cedula.length === 0) {
-      texto = '<span >Ingrese su cédula</span>';
-      document.getElementById('texto2').innerHTML = texto;
-      return false;
-    } else if (!expresion.test(cedula)) {
-      texto = '<span >Ingrese solo caracteres válidos (números)</span>';
-      document.getElementById('texto2').innerHTML = texto;
-      return false;
-    } else if (cedula.length < 3) {
-      texto = '<span >Tiene que ser mayor a 3 valores numericos</span>';
-      document.getElementById('texto2').innerHTML = texto;
-      return false;
-    } else if (cedula.length > 10) {
-      texto = '<span>Su cédula tiene que ser menor a 10 numeros</span>';
-      document.getElementById('texto2').innerHTML = texto;
-      return false;
-    
-    }else{
-      document.getElementById('texto2').innerHTML = '';
-      return true;
-    }
-    
-   
-    
-  };
-  
-  exports.validateForm = validateForm;
-
+  });
+}

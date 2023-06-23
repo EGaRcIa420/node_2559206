@@ -1,7 +1,7 @@
 function login() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  if (username === "Emmanuel" && password === "Garcia") {
+  if (username === "THOR" && password === "DDCE") {
     Swal.fire({
       icon: 'success',
       title: 'Inicio de sesión exitoso',
