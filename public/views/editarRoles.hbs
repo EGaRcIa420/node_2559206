@@ -22,6 +22,35 @@
       border: none;
       cursor: pointer;
     }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -122,7 +151,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/roles" class="nav-link ">
+                <a href="/roles" class="nav-link active">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
                 </a>
@@ -152,7 +181,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
+                <a href="/calendario" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Calendario</p>
                 </a>
@@ -182,7 +211,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/suscripciones" class="nav-link active">
+                <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Suscripciones</p>
                 </a>
@@ -203,96 +232,78 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tabla suscripciones</h1>
+            <h1>Tabla Roles</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Tabla suscripciones</li>
+              <li class="breadcrumb-item active">Roles</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-        <!-- Main content -->
+    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Listado de suscripciones</h3>
-              </div>
-              <div class="col-lg-12">
-                <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarsuscripciones">
-                    Nueva suscripcion</a></i></button>
+                <h3 class="card-title">Editar Rol</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>N°</th>
-                    <th>Id suscripcion</th>
-                    <th>Id servicios </th>
-                    <th>Regularidad</th>
-                    <th>fecha inicio</th>
-                    <th>fecha fin</th>
-                    <th>Acciones</th>
-                  </tr>
-                  </thead>
-                  <tr>
-                    <td>1</td>
-                     <td>234</td>
-                    <td>127</td>
-                    <td>mensual</td>
-                    <td>2023-05-25</td>
-                    <td>2023-06-24</td>
-                   
+                <table>
+                    <tr>
                     <td>
-                         <a href="/editarsuscripcion" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
+                        <div class="form-container">
+                        <h2>Actualizar Rol</h2>
+                        <form>
+                            
+
+                            <label for="paquete">Id Usuarios:</label>
+                            <input type="number" id="idusuario" placeholder="id usuario" >
+
+                            <label for="roles">Nombre rol:</label>
+                            <input type="text" id="nombrerol" placeholder="nombre_rol" >
+
+                            <label for="roles">Permisos del Rol:</label>
+                            <input type="text" id="permisosrol" placeholder="permisosrol" >
+
+                            <label for="estado">Estado:</label>
+                            <select id="estadorol" name="estado" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                            </select>
+                         
+                       
+                        <button type="button" class="btn btn-success boton-registro" onclick="validarRoles()">Guardar</button>
+                         <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+                        </form>
+                         <h2>Agregar permisos</h2>
+                        <form>
+                          <label for="nombrerol">Nombre del rol:</label>
+                            <input type="number" id="nombrerol" placeholder="nombre rol" >
+                            <label for="estado">permisos del Rol:</label>
+                            <select id="estadorol" name="estado" required>
+                            <option value="activo">listar</option>
+                            <option value="inactivo">eliminar</option>
+                            <option value="inactivo">editar</option>
+                            <option value="inactivo">listar,eliminar,agregar</option>
+                             <option value="inactivo">listar,eliminar</option>
+                              <option value="inactivo">listar,agregar</option>
+                              <option value="inactivo">listar,agregar,editar</option>
+                            </select>
+                         
+                       
+                        <button type="button" class="btn btn-success boton-registro" onclick="validarRoles()">Guardar</button>
+                         
+                        </form>
+                        </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>678</td>
-                    <td>736</td>
-                    <td>trimestre</td>
-                    <td>2023-01-01</td>
-                    <td>2023-03-01</td>
-                    <td>
-                         <a href="/editarsuscripcion" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                         <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>7465</td>
-                    <td>8466</td>
-                    <td>semestral</td>
-                    <td>2023-02-01</td>
-                     <td>2023-08-01</td>
-                    <td>
-                        <a href="/editarsuscripcion" class="btn btn-primary btn-sm">
-                          <i class="fas fa-edit fa-sm"></i>
-                          </a>
-                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                          </button>    
-                    </td>
-                  </tr>                
-                  </tbody>
+                    </tr>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -315,6 +326,7 @@
       <b>Version</b> 1.0
     </div>
   </footer>
+
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -325,7 +337,9 @@
 
 <!-- jQuery -->
 <script src="Cerrar.js"></script>
+<script src="funcionesroles.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+<script src="funcionesroles.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -347,6 +361,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
+<script src="/funcionesRoles.js"></script>
 <script>
   $(function () {
     $("#example1").DataTable({

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>PROYECTO | T.H.O.R</title>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -59,7 +59,8 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__wobble" src="dist/img/Weightlifting free icons designed by Freepik.png" alt="Nuevo Logo" height="60" width="60">
+
   </div>
 
   <!-- Navbar -->
@@ -107,7 +108,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/logo.png" alt="Nuevo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">PROYECTO T.H.O.R</span>
     </a>
 
@@ -244,61 +245,272 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Agregar Suscripcion</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table>
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Agregar suscripcion</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body" style="display: flex; flex-direction: row;">
+                  <table>
                     <tr>
-                    <td>
+                      <td>
                         <div class="form-container">
-                        <h2>Agregar suscripcion</h2>
-                        <form>
-                            <label for="Id_servicios">Id servicios:</label>
-                            <input type="number" id="Id_servicios" placeholder="Id_servicios" >
+                          <div class="form-wrapper">
+                            <h2>Agregar suscripcion</h2>
+                            <form class="form form-horizontal">
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <label for="nombresuscripcion">Nombre suscripcion:</label>
+                                  <input type="text" id="nombresuscripcion" placeholder="Nombre suscripcion">
+                                </div>
+                                <br>
+                                <div class="col-sm-6">
+                                  <label for="suscripciones">Fecha inicio:</label>
+                                  <input type="date" id="fecha_inicio" placeholder="Fecha de inicio">
+                                </div>
+                              </div>
 
-                            <label for="Regularidad">Regularidad:</label>
-                            <input type="text" id="Regularidad" placeholder="Regularidad" >
-
-                            <label for="fecha_inicio">fecha inicio:</label>
-                            <input type="date" id="fecha_inicio" placeholder="fecha_inicio" >
-
-                            <label for="fecha_fin">fecha fin:</label>
-                            <input type="date" id="fecha_fin" placeholder="fecha_fin" >
-                         
-                            <button type="button" class="btn btn-dark boton-registro" onclick="validarsuscripcion()">Guardar</button>
-                        </form>
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <label for="suscripciones">Fecha de fin:</label>
+                                  <input type="date" id="fecha_fin" placeholder="Fecha fin">
+                                </div>
+                                <div class="col-sm-6">
+                                  <label for="estado">Paquetes:</label>
+                                  <select id="paquetes" name="paquetes" required>
+                                    <option value="activo">Seleccionar opción</option>
+                                    <option value="activo">Rumba, Maquinas, Spa, Nutrición</option>
+                                    <option value="inactivo">Spinning, Evaluación,gym</option>
+                                    <option value="inactivo">Rumba, Spa, Nutrición,Spinning</option>
+                                    <option value="inactivo">Rumba, Maquinas,gym, Spa</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="row">
+                              <div class="col-sm-6">
+                                  <label for="estado">Servicios:</label>
+                                  <select id="servicios" name="servicios" required>
+                                    <option value="activo">Seleccionar opción</option>
+                                    <option value="activo">Rumba, Maquinas, Spa, Nutrición</option>
+                                    <option value="inactivo">Spinning, Evaluación</option>
+                                    <option value="inactivo">Rumba, Spa, Nutrición</option>
+                                    <option value="inactivo">Rumba, Maquinas, Spa</option>
+                                  </select>
+                                </div>
+                                 <div class="col-sm-6">
+                                  <label for="suscripciones">Cantidad:</label>
+                                  <input type="number" id="fechainicio" placeholder="Cantidad">
+                                </div>
+                              </div>
+                              <br>
+                              </div>
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <button type="button" class="btn btn-success boton-registro"
+                                    onclick="validarsuscripciones()">Guardar</button>
+                                  <button type="button" class="btn btn-danger boton-cancelar"
+                                    onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+                                </div>
+                              </div>
+                            </form>
+                            <br>
+                            <h2>Agregar pagos</h2>
+                            <form>
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <label for="nombrecliente">Nombre del cliente:</label>
+                                  <input type="text" id="nombrecliente" placeholder="Nombre cliente">
+                                </div>
+                                <div class="col-sm-6">
+                                  <label for="monto">Monto:</label>
+                                  <input type="text" id="monto" placeholder="Monto">
+                                </div>
+                              </div>
+                                <div class="row">
+                                <div class="col-sm-6">
+                                  <label for="fechainicio">Fecha de inicio:</label>
+                                  <input type="date" id="fecha_inicio" placeholder="Fecha inicio">
+                                </div>
+                                <div class="col-sm-6">
+                                  <label for="nombrecliente">Fecha fin:</label>
+                                  <input type="date" id="fecha_fin" placeholder="Fecha fin">
+                                </div>
+                                </div>
+                                <div class="row">                             
+                                <div class="col-sm-6">
+                                  <label for="estado">Estado:</label>
+                                  <select id="estadorol" name="estado" required>
+                                    <option value="activo">pago</option>
+                                    <option value="inactivo">vendido</option>
+                                    <option value="inactivo">Mora</option>                                    
+                                  </select>
+                                </div>
+                              </div>
+                              <br>
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <button type="button" class="btn btn-success boton-registro"
+                                    onclick="validarsuscripciones()">Guardar</button>
+                                  <button type="button" class="btn btn-danger boton-cancelar"
+                                    onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+                                </div>
+                              </div>
+                            </form>
+                        <td>
+                        <div class="card-body">
+                          <h3>Servicios</h3>
+                          <table id="example12" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                             <th>Id Servicios</th>
+                             <th>Servicios</th>
+                              <th>Clases</th>
+                              <th>Precio</th>
+                              <th>Acciones</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                              <td>1</td>
+                              <td>Día</td>
+                              <td>Clase,Rumba,Máquinas</td>
+                              <td>6900</td>                  
+                              <td>
+                                <button class="btn btn-primary btn-sm">
+                                      <i class="fas fa-edit  fa-sm"></i>
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                                  <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
+                           </td>
+                            </tr>
+                            <tr>
+                            <td>2</td>
+                            <td>Mensualidad</td>
+                            <td>Clase,Rumba,Máquinas</td>
+                            <td>69000</td>
+                              <td>
+                                <button class="btn btn-primary btn-sm">
+                                      <i class="fas fa-edit  fa-sm"></i>
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                                  <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
+                              </td>
+                            </tr>
+                            <tr>  
+                                <td>3</td>
+                                <td>Mensualidad</td>
+                                <td>Clase,Rumba,Máquinas, nutrición,evaluación</td>
+                                <td>98000</td>                     
+                                <td>
+                                  <button class="btn btn-primary btn-sm">
+                                      <i class="fas fa-edit  fa-sm"></i>
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                                  <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                          </div>
+                          <div class="card-body">
+                            <h3>Paquetes</h3>
+                            <table id="example12" class="table table-bordered table-striped">
+                              <thead>
+                              <tr>
+                                <th>Id Paquetes</th>
+                                <th>Paquetes</th>
+                                <th>Servicios</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                              </tr>
+                              </thead>
+                              <tr>
+                                <td>1</td>
+                                <td>Anualidad</td>
+                                <td>Rumba, Maquinas, Spa, Nutrición</td>
+                                <td>4</td>
+                                <td>789000</td>                      
+                                <td>
+                                  <button class="btn btn-primary btn-sm">
+                                      <i class="fas fa-edit  fa-sm"></i>
+                                  </button>
+                                    <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                      <i class="fas fa-trash-alt"></i>
+                                    </button> 
+                                    <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
+                              </td>
+                              </tr>
+                              <tr>
+                              <td>2</td>
+                              <td>Trimestre</td>
+                              <td>Spinning, Evaluación</td>
+                              <td>2</td>
+                              <td>298000</td>
+                                <td>
+                                  <button class="btn btn-primary btn-sm">
+                                      <i class="fas fa-edit  fa-sm"></i>
+                                  </button>
+                                    <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                      <i class="fas fa-trash-alt"></i>
+                                    </button> 
+                                    <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
+                                </td>
+                              </tr>
+                              <tr>  
+                              <td>3</td>
+                              <td>Semestre</td>
+                              <td>Rumba, Spa, Nutrición</td>
+                              <td>3</td>
+                              <td>585000</td>                             
+                                <td>
+                                  <button class="btn btn-primary btn-sm">
+                                      <i class="fas fa-edit  fa-sm"></i>
+                                  </button>
+                                    <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                      <i class="fas fa-trash-alt"></i>
+                                    
+                                    </button> 
+                                    <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
+                                </td>
+                              </tr>
+                              </tbody>
+                            </table>
                         </div>
-                    </td>
-                    </tr>
-                </table>
+                      </td>
+                      </tr>
+                    </table>
+                    </div>
+                </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-body -->
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
+            <!-- /.col -->
           </div>
-          <!-- /.col -->
+          <!-- /.row -->
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
-    Todos los derechos reservados.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
     </div>
-  </footer>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
+      Todos los derechos reservados.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0
+      </div>
+    </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

@@ -1,13 +1,7 @@
 function validarCamposUsuarios() {
-  var id_usuario = document.getElementById('id_usuario').value;
   var Nombre_de_usuario = document.getElementById('Nombre_de_usuario').value;
   var correo_de_usuario = document.getElementById('correo_de_usuario').value;
   var confirmarPassword = document.getElementById('confirmarPassword').value;
-
-  if (id_usuario === '') {
-    Swal.fire('El campo "id usuario" no puede estar vacío', '', 'error');
-    return;
-  }
 
   if (Nombre_de_usuario === '') {
     Swal.fire('El campo "Nombre de usuario" no puede estar vacío', '', 'error');
@@ -24,10 +18,6 @@ function validarCamposUsuarios() {
     return;
   }
 
-  if (!/^\d+$/.test(id_usuario)) {
-    Swal.fire('El ID solo debe contener números', '', 'error');
-    return;
-  }
 
   if (!/^[A-Za-z\s]+$/.test(Nombre_de_usuario)) {
     Swal.fire('El nombre de usuario solo debe contener letras y espacios', '', 'error');
