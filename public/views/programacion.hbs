@@ -194,12 +194,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Programacion</h1>
+            <h1>Programación</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Calendar</li>
+              <li class="breadcrumb-item active">Programación</li>
             </ol>
           </div>
         </div>
@@ -207,28 +207,201 @@
     </section>
 
 
-    <!-- Main content -->
-    <section class="content">
+     <!-- Main content -->
+      <section class="content">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Programación</h3>
+
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            
+            
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+       <br><br><br>
       <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Programacion</h3>
-          
-        </div>
-        <!-- /.card-header -->
         <div class="card-body">
-          <a type="button" class="btn btn-primary" href="/registrarprogramacion">Agregar Programacion</a>  
-         
-         <button class="btn btn-success"><i class="fas fa-search fa-fw"></i> Buscar</button> 
-          <button class="btn btn-secondary"> <i class="fa fa-arrow-down" aria-hidden="true"></i> Descarga</button>
-          <div id="jsGrid1"></div>
+          <table id="example12" class="table table-bordered table-striped">
+            <thead>
+             
+              <tr>
+                <th>Item</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dia Laboral</td>
+                <td>&#10003;</td>
+              </tr>
+              <tr>
+                <td>Horario Laboral:</td>
+                <td>8:00 am - 6:00 pm</td>
+              </tr>
+              <tr>
+                <td>Disponibles</td>
+                <td>
+                  <select name="hdisponibles" id="hdisponibles">
+                    <option>8:00am - 10:00am</option>
+                    <option>10:00am - 12:00am</option>
+                    <option>12:00pm - 10:00pm</option>
+                    <option>4:00pm - 6:00pm</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <!-- /.card-body -->
       </div>
-      <!-- /.card -->
-    </section>
-    <!-- /.content -->
+    </div>
+    <div class="col-md-8">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h2 class="text-center mb-4">Calendario</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="green-bg">
+                <tr>
+                  <th scope="col">DO</th>
+                  <th scope="col">LU</th>
+                  <th scope="col">MA</th>
+                  <th scope="col">MI</th>
+                  <th scope="col">JU</th>
+                  <th scope="col">VI</th>
+                  <th scope="col">SA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                  <td>9</td>
+                  <td>10</td>
+                  <td>11</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                  <td>23</td>
+                  <td>24</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                  <td>30</td>
+                  <td>31</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- /.content-wrapper -->
+</div>
+<br><br>
+
+
+              <div class="col-md-14">
+              <a type="button" class="btn btn-primary" href="/registrarprogramacion">Agregar Programación</a>
+
+            <button class="btn btn-success"><i class="fas fa-search fa-fw"></i> Buscar</button>
+            <button class="btn btn-secondary"> <i class="fa fa-arrow-down" aria-hidden="true"></i> Descarga</button>
+                    <br><br>
+                    <table id="example1" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Id</th>
+                          <th>Clase</th>
+                          <th>Hora</th>
+                          <th>Instructor</th>
+                          <th>Estado Laboral</th>
+                          <th>Descripcion</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>8:00 Am</td>
+                          <td>6:00 Pm</td>
+                          <td>Lunes-Viernes</td>
+                          <td>Activo (Laboral)</td>
+                          <td>Clase</td>
+                          <td>
+                            <a href="/editarprogramacion" class="btn btn-primary btn-sm">
+                              <i class="fas fa-edit fa-sm"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>8:00 Am</td>
+                          <td>1:00 Pm</td>
+                          <td>Sabado</td>
+                          <td>Activo (Laboral)</td>
+                          <td>Clase</td>
+                          <td>
+                            <a href="/editarprogramacion" class="btn btn-primary btn-sm">
+                              <i class="fas fa-edit fa-sm"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>8:00 Am</td>
+                          <td>11:00Am</td>
+                          <td>Domingo</td>
+                          <td>Activo (Laboral)</td>
+                          <td>Clase</td>
+                          <td>
+                            <a href="/editarprogramacion" class="btn btn-primary btn-sm">
+                              <i class="fas fa-edit fa-sm"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /.card -->
+      </section>
+
+      <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0

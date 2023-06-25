@@ -3,18 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nueva Programacion 3 | THOR </title>
-
+  <title>PROYECTO | T.H.O.R</title>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
+  <style>
+    .btn {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .boton-registro {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
+
+    .boton-cancelar {
+      margin-bottom: 10px; /* Agregar margen inferior */
+    }
+    
+  </style>
 </head>
+
 <body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
@@ -142,19 +191,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
+                <a href="/calendario" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Calendario</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/programacion" class="nav-link active">
+                <a href="/programacion" class="nav-link">
                   <i class="fas fa-code"></i>
                   <p>Programacion</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/citas" class="nav-link">
+                <a href="/citas" class="nav-link active">
                   <i class="far fa-calendar-alt nav-icon"></i>
                   <p>Citas</p>
                 </a>
@@ -193,17 +242,18 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Programación</h1>
+            <h1>Tabla Citas</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Programación</li>
+              <li class="breadcrumb-item active">Citas</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+
     <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
@@ -213,12 +263,16 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Nueva Programacion </h3>
+                  <h3 class="card-title">Editar Programacion </h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form class="form-horizontal">
                   <div class="card-body">
+
+                    <div class="form-group">
+                      <label for="fecha">Id:</label>
+                    </div>
                     <div class="form-group">
                       <label for="hora">Fecha </label>
                       <input type="date" class="form-control" id="fecha" placeholder="Ingrese la hora final" required>
@@ -266,7 +320,7 @@
                         required>
                     </div>
                     <div class="card-footer">
-                      <button type="button" class="btn btn-success" onclick="validarFormulario()">Agregar</button>
+                      <button type="button" class="btn btn-success" onclick="validarFormulario()">Editar</button>
                       <button type="button" class="btn btn-danger"
                         onclick="mostrarConfirmacionCancelar()">Cancelar</button>
 
@@ -363,10 +417,11 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
+    Todos los derechos reservados.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -376,23 +431,47 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<script src="Cerrar.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+
 <!-- jQuery -->
+<script src="Cerrar.js"></script>
 <script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- bs-custom-file-input -->
-<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
-$(function () {
-  bsCustomFileInput.init();
-});
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
 </script>
 </body>
 </html>

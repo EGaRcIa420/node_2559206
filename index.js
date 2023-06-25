@@ -147,6 +147,12 @@ app.get('/editarRoles', (req, res)=>{
 app.get('/editarsuscripcion', (req, res)=>{
     res.render('editarsuscripcion')
 })
+app.get('/editaragenda', (req, res)=>{
+    res.render('editaragenda')
+})
+app.get('/editarprogramacion', (req, res)=>{
+    res.render('editarprogramacion')
+})
 
 app.listen(puerto,()=>{
     console.log(`Escuchando por el puerto ${puerto}`)
