@@ -1,10 +1,16 @@
 function validarCamposClientes() {
+  var cedula = document.getElementById('cedula').value;
   var Nombre_de_cliente = document.getElementById('Nombre_de_cliente').value;
   var Telefono = document.getElementById('Telefono').value;
   var Fecha = document.getElementById('Fecha').value;
   var correo = document.getElementById('correo').value;
   var Restrincciones = document.getElementById('Restrincciones').value;
   var estado = document.getElementById('estado').value;
+
+  if (cedula === '') {
+    Swal.fire ('El campo "Cedula" no puede estar vacío', '', 'error');
+    return;
+  }
 
   if (Nombre_de_cliente === '') {
     Swal.fire('El campo "Nombre de cliente" no puede estar vacío', '', 'error');
@@ -17,7 +23,7 @@ function validarCamposClientes() {
   }
 
   if (Fecha === '') {
-    Swal.fire('El campo "Fecha" no puede estar vacío', '', 'error');
+    Swal.fire('El campo "Fecha de inicio" no puede estar vacío', '', 'error');
     return;
   }
 
@@ -45,7 +51,10 @@ function validarCamposClientes() {
     Swal.fire('El teléfono solo debe contener números', '', 'error');
     return;
   }
-
+  if (!/^\d+$/.test(cedula)) {
+    Swal.fire('la cedula solo debe contener números', '', 'error');
+    return;
+  }
   // Aquí puedes agregar más validaciones según tus necesidades
 
   Swal.fire('Guardado exitosamente', '', 'success');

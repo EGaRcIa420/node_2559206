@@ -26,7 +26,7 @@ function validarCamposEmpleados() {
   }
 
   if (Hoja_de_vida === '') {
-    Swal.fire('El campo "Hoja_de_vida" no puede estar vacío', '', 'error');
+    Swal.fire('El campo "Hoja de vida" no puede estar vacío', '', 'error');
     return;
   }
 

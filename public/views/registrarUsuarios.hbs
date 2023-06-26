@@ -264,7 +264,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Agregar usuarios</h3>
+                <h3 class="card-title">Registrar usuarios</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -272,27 +272,27 @@
                     <tr>
                     <td>
                         <div  class="form-container">
-                        <h2>Agregar usuario</h2>
-                        <form>
-                            <label for="Nombre_de_usuario">Nombre de usuario<span style="color: red;">*</span>:</label>
-                            <input type="text" id="Nombre_de_usuario" placeholder="Nombre de usuario" >
+                        <h2>Registrar usuario</h2>
+                        <form><h6>Los campos con * son obligatorios</h6>
+                            <label for="Nombre_de_usuario">Nombre de usuario:<span style="color: red;">*</style></label>
+                            <input type="text" id="Nombre_de_usuario" placeholder="Nombre de usuario *" >
 
-                            <label for="tipo_de_usuario">Tipo de usuario<span style="color: red;">*</span>:</label>
+                            <label for="tipo_de_usuario">Tipo de usuario:<span style="color: red;">*</style></label>
                             <select name="tipo_de_usuario" id="tipode_usuario" required>
                               <option value="Administrador">Administrador</option>
                               <option value="Empleado">Empleado</option>
                               <option value="Cliente">Cliente</option>
                             </select>
-                            <label for="correo_de_usuario">Correo de usuario<span style="color: red;">*</span>:</label>
-                            <input type="text" id="correo_de_usuario" placeholder="correo de usuario" >
+                            <label for="correo_de_usuario">correo de usuario:<span style="color: red;">*</style></label>
+                            <input type="text" id="correo_de_usuario" placeholder="correo de usuario *" >
                             
-                            <label for="Password">Password<span style="color: red;">*</span>:</label>
-                            <input id="password" type="password" class="validate">
+                            <label for="Password">Password<span style="color: red;">*</style></label>
+                            <input id="password" type="password" class="validate" placeholder="ingresar contraseña *">
                             
-                            <label for="confirmarPassword">Confirmar Password<span style="color: red;">*</span>:</label>
-                            <input id="confirmarPassword" type="password" class="validate">
+                            <label for="confirmarPassword">Confirmar Password<span style="color: red;">*</style></label>
+                            <input id="confirmarPassword" type="password" class="validate" placeholder="confirmar  contraseña *">
 
-                            <label for="estado">Estado<span style="color: red;">*</span>:</label>
+                            <label for="estado">Estado:</label>
                             <select id="estado" name="estado" required>
                               <option value="true">Activo</option>
                               <option value="false">Inactivo</option>
