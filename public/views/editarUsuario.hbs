@@ -271,25 +271,25 @@
                         <div  class="form-container">
                         <h2>Actualizar Usuarios</h2>
                         <form>
-                            <label for="Nombre_de_usuario">Nombre de usuario:</label>
+                            <label for="Nombre_de_usuario">Nombre de usuario<span style="color: red;">*</span>:</label>
                             <input type="text" id="Nombre_de_usuario" placeholder="Nombre de usuario" >
 
-                            <label for="tipo_de_usuario">Tipo de usuario:</label>
+                            <label for="tipo_de_usuario">Tipo de usuario<span style="color: red;">*</span>:</label>
                             <select name="tipo_de_usuario" id="tipo_de_usuario" required>
                               <option value="Administrador">Administrador</option>
                               <option value="Empleado">Empleado</option>
                               <option value="Cliente">Cliente</option>
                             </select>
-                            <label for="correo_de_usuario">Correo de usuario:</label>
+                            <label for="correo_de_usuario">Correo de usuario<span style="color: red;">*</span>:</label>
                             <input type="text" id="correo_de_usuario" placeholder="Correo de usuario" >
 
-                            <label for="Password">Password</label>
+                            <label for="Password">Password<span style="color: red;">*</span>:</label>
                             <input id="password" type="password" class="validate">
                             
-                            <label for="confirmPass">Confirmar Password</label>
+                            <label for="confirmPass">Confirmar Password<span style="color: red;">*</span>:</label>
                             <input id="confirmarPassword" type="password" class="validate">
 
-                            <label for="estado">Estado:</label>
+                            <label for="estado">Estado<span style="color: red;">*</span>:</label>
                             <select id="estado" name="estado" required>
                               <option value="true">Activo</option>
                               <option value="false">Inactivo</option>
