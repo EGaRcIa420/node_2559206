@@ -20,17 +20,7 @@ function validarCamposCita() {
       );
       return;
     }
-    if (!/^\d+$/.test(idCita)) {
-      Swal.fire(
-        'El id solo debe contener números',
-        '',
-        'error'
-      );
-      return;
-    }
-
     
-  
     // Validación del nombre y apellido
     if (!/^[A-Za-z\s]+$/.test(nombreApellido)) {
       Swal.fire(
