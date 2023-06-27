@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>THOR | Programacion</title>
+  <title>THOR | Programacion Clases</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -113,6 +113,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
@@ -125,42 +131,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
-                    <i class="fas fa-user"></i>
-                    <p>Clientes</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/programacion" class="nav-link active">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/servicios" class="nav-link ">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Servicios</p>
@@ -170,6 +140,36 @@
                 <a href="/paquetes" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Agenda Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link active">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion Clases</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -194,12 +194,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Programación</h1>
+            <h1>Programación Clases</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Programación</li>
+              <li class="breadcrumb-item active">Programación Clases</li>
             </ol>
           </div>
         </div>
@@ -211,7 +211,7 @@
       <section class="content">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Programación</h3>
+            <h3 class="card-title">Programación Clases</h3>
 
           </div>
           <!-- /.card-header -->
@@ -332,7 +332,7 @@
 
 
               <div class="col-md-14">
-              <a type="button" class="btn btn-primary" href="/registrarprogramacion">Agregar Programación</a>
+              <a type="button" class="btn btn-primary" href="/registrarProgramacion">Agregar Programación Clases</a>
 
             <button class="btn btn-success"><i class="fas fa-search fa-fw"></i> Buscar</button>
             <button class="btn btn-secondary"> <i class="fa fa-arrow-down" aria-hidden="true"></i> Descarga</button>
@@ -358,7 +358,7 @@
                           <td>Activo (Laboral)</td>
                           <td>Clase</td>
                           <td>
-                            <a href="/editarprogramacion" class="btn btn-primary btn-sm">
+                            <a href="/editarProgramacion" class="btn btn-primary btn-sm">
                               <i class="fas fa-edit fa-sm"></i>
                             </a>
                           </td>
@@ -371,7 +371,7 @@
                           <td>Activo (Laboral)</td>
                           <td>Clase</td>
                           <td>
-                            <a href="/editarprogramacion" class="btn btn-primary btn-sm">
+                            <a href="/editarProgramacion" class="btn btn-primary btn-sm">
                               <i class="fas fa-edit fa-sm"></i>
                             </a>
                           </td>
@@ -384,7 +384,7 @@
                           <td>Activo (Laboral)</td>
                           <td>Clase</td>
                           <td>
-                            <a href="/editarprogramacion" class="btn btn-primary btn-sm">
+                            <a href="/editarProgramacion" class="btn btn-primary btn-sm">
                               <i class="fas fa-edit fa-sm"></i>
                             </a>
                           </td>
@@ -454,7 +454,7 @@
               .addClass("btn btn-primary")
               .text("Editar")
               .on("click", function() {
-                window.location.href = "http://localhost:8484/registrarprogramacion";
+                window.location.href = "http://localhost:8484/registrarProgramacion Clases";
                 // Lógica para editar el elemento item
               });
           }

@@ -161,6 +161,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
@@ -173,42 +179,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
-                    <i class="fas fa-user"></i>
-                    <p>Clientes</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/programacion" class="nav-link">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/citas" class="nav-link active">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/servicios" class="nav-link ">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Servicios</p>
@@ -218,6 +188,36 @@
                 <a href="/paquetes" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Agenda Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion Clases</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link active">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -271,33 +271,38 @@
                         <div  class="form-container">
                         <h2>Actualizar Cita</h2>
                         <form>
-                            <label for="Nombre_y_Apellido">Nombre y Apellido<span style="color: red;">*</span></label>
-                            <input type="text" id="Nombre_y_Apellido" placeholder="Nombre_y_Apellido" >
+                          <label for="Nombre_y_Apellido">Nombre y Apellido<span style="color: red;">*</span>:</label>
+                          <input type="text" id="Nombre_y_Apellido" oninput="validarNombreApellido()" placeholder="Ingresa el nombre y apellido">
+                          <p id="texto1" style="color: red;"></p>
 
-                            <label for="Telefono">Telefono<span style="color: red;">*</span>:</label>
-                            <input type="number" id="Telefono" placeholder="Telefono" >
+                          <label for="Telefono">Telefono<span style="color: red;">*</span>:</label>
+                          <input type="text" id="Telefono" oninput="validarTelefono()" placeholder="Ingresa el teléfono">
+                          <p id="texto2" style="color: red;"></p>
 
-                            <label for="Fecha">Fecha<span style="color: red;">*</span>:</label>
-                            <input type="date" id="Fecha" placeholder="Fecha" >
+                          <label for="Fecha">Fecha<span style="color: red;">*</span>:</label>
+                          <input type="date" id="Fecha" oninput="validarFecha()" placeholder="Ingresa la fecha">
+                          <p id="texto3" style="color: red;"></p>
 
-                            <label for="Hora">Hora<span style="color: red;">*</span>:</label>
-                            <input type="time" id="Hora" placeholder="Hora" >
+                          <label for="Hora">Hora<span style="color: red;">*</span>:</label>
+                          <input type="text" id="Hora" oninput="validarHora()" placeholder="Ingresa la hora">
+                          <p id="texto4" style="color: red;"></p>
 
-                            <label for="Restrincciones">Restrincciones<span style="color: red;">*</span>:</label>
-                            <input type="text" id="Restrincciones" placeholder="Restrincciones" >
+                          <label for="Restrincciones">Restrincciones<span style="color: red;">*</span>:</label>
+                          <textarea id="Restrincciones" oninput="validarRestricciones()" placeholder="Ingresa las restricciones"></textarea>
+                          <p id="texto5" style="color: red;"></p>
 
-                            <label for="HistoriaClinica">Historia Clinica<span style="color: red;">*</span>:</label>
-                            <input type="file" id="HistoriaClinica" name="HistoriaClinica">
+                          <label for="HistoriaClinica">Historia Clinica<span style="color: red;">*</span>:</label>
+                          <input type="file" id="HistoriaClinica" name="HistoriaClinica">
 
-                            <label for="estado">Estado<span style="color: red;">*</span>:</label>
-                            <select id="estado" name="estado" required>
-                              <option value="Asistio">Asistio</option>
-                              <option value="Pendiente">Pendiente</option>
-                              <option value="Cancelo">Cancelo</option>
-                            </select>
-                            <br><br>
-                            <button type="button" class="btn btn-success boton-registro" onclick="validarCamposCita()">Actualizar</button>
-                            <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+                          <label for="estado">Estado<span style="color: red;">*</span>:</label>
+                          <select id="estado" name="estado" required>
+                            <option value="Asistio">Asistio</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Cancelo">Cancelo</option>
+                          </select>
+                          <br><br>
+                          <button type="button" class="btn btn-success boton-registro" onclick="guardarCita()">Actualizar</button>
+                          <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
                         </form>
                         </div>
                     </td>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nueva Programacion 3 | THOR </title>
+  <title>Nueva Programacion Clases 3 | THOR </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -112,6 +112,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
@@ -124,42 +130,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
-                    <i class="fas fa-user"></i>
-                    <p>Clientes</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/programacion" class="nav-link active">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/servicios" class="nav-link ">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Servicios</p>
@@ -169,6 +139,36 @@
                 <a href="/paquetes" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Agenda Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link active">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion Clases</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -193,12 +193,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Programación</h1>
+            <h1>Programación Clases</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Programación</li>
+              <li class="breadcrumb-item active">Programación Clases</li>
             </ol>
           </div>
         </div>
@@ -213,7 +213,7 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Nueva Programacion </h3>
+                  <h3 class="card-title">Nueva Programacion Clases </h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
@@ -293,7 +293,7 @@
                     
                       var fechaActual = new Date().toISOString().split('T')[0];
                       if (fecha < fechaActual) {
-                        Swal.fire('Error', 'No es posible registrar una programacion en días anteriores a la fecha actual.', 'error');
+                        Swal.fire('Error', 'No es posible registrar una Programacion Clases en días anteriores a la fecha actual.', 'error');
                         return;
                       }
 
@@ -336,7 +336,7 @@
                     }).then((result) => {
                       if (result.isConfirmed) {
                         // Si el usuario confirma la cancelación, redirigirss a la página de calendario
-                        window.location.href = 'programacion';
+                        window.location.href = 'Programacion Clases';
                       }
                     });
                   }

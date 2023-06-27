@@ -50,3 +50,14 @@ registrarse = () => {
     }, 2000);
   };
   
+
+  volver = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Ahora Inicia Sesion',
+      showConfirmButton: false,
+      timer: 2500
+    }).then(function () {
+      window.location.href = "/";
+    });
+}

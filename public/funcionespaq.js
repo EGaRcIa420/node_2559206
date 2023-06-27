@@ -1,3 +1,60 @@
+function validarPaquete() {
+  var paquete = document.getElementById('paquete').value;
+
+  if (paquete.trim() === '') {
+    document.getElementById('texto1').innerText = 'Por favor, ingrese el nombre del paquete';
+  } else if (!/^[A-Za-z0-9]+$/.test(paquete)) {
+    document.getElementById('texto1').innerText =
+      'El nombre de paquete solo debe contener letras y números';
+  } else {
+    document.getElementById('texto1').innerText = '';
+  }
+}
+
+function validarServicios() {
+  var servicios = document.getElementById('servicios').value;
+
+  if (servicios.trim() === '') {
+    document.getElementById('texto2').innerText = 'Por favor, ingrese los servicios';
+  } else if (!/^[A-Za-z0-9,\s]+$/.test(servicios)) {
+    document.getElementById('texto2').innerText =
+      'Los servicios solo deben contener letras, números, comas o espacios';
+  } else {
+    document.getElementById('texto2').innerText = '';
+  }
+}
+  
+ 
+
+  // Validación de la cantidad
+  function validarCantidad() {
+    var cantidad = document.getElementById('cantidad').value;
+  
+    if (cantidad.trim() === '') {
+      document.getElementById('texto3').innerText = 'Por favor, ingrese la cantidad';
+    } else if (!/^\d+$/.test(cantidad)) {
+      document.getElementById('texto3').innerText = 'La cantidad debe ser un número entero';
+    } else if (cantidad < 1 || cantidad > 8) {
+      document.getElementById('texto3').innerText = 'La cantidad debe estar entre 1 y 8';
+    } else {
+      document.getElementById('texto3').innerText = '';
+    }
+  }
+
+function validarTotal() {
+  var total = document.getElementById('total').value;
+
+  if (total.trim() === '') {
+    document.getElementById('texto4').innerText = 'Por favor, ingrese el total';
+  } else if (!/^\d+$/.test(total)) {
+    document.getElementById('texto4').innerText = 'El total debe ser un número entero';
+  } else if (total < 4000 || total > 1000000) {
+    document.getElementById('texto4').innerText = 'El total debe estar entre 4000 y 1000000';
+  } else {
+    document.getElementById('texto4').innerText = '';
+  }
+}
+
 function validarCamposPaquete() {
   var paquete = document.getElementById('paquete').value;
   var servicios = document.getElementById('servicios').value;
@@ -19,66 +76,6 @@ function validarCamposPaquete() {
     return;
   }
 
-  // Validación de paquetes
-  if (!/^[A-Za-z0-9]+$/.test(paquete)) {
-    Swal.fire(
-      'El nombre de paquete solo debe contener letras y números',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  if (!/^[A-Za-z0-9,\s]+$/.test(servicios)) {
-    Swal.fire(
-      'Los servicios solo deben contener letras, números, comas o espacios',
-      '',
-      'error'
-    );
-    return;
-  }
-  
- 
-
-  // Validación de la cantidad
-  if (!/^\d+$/.test(cantidad)) {
-    Swal.fire(
-      'La cantidad debe ser un número entero',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  // Validación del rango de la cantidad
-  if (cantidad < 1 || cantidad > 8) {
-    Swal.fire(
-      'La cantidad debe estar entre 1 y 8',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  // Validación del total
-  if (!/^\d+$/.test(total)) {
-    Swal.fire(
-      'El total debe ser un número entero',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  // Validación del rango del total
-  if (total < 4000 || total > 1000000) {
-    Swal.fire(
-      'El total debe estar entre 4000 y 1000000',
-      '',
-      'error'
-    );
-    return;
-  }
   Swal.fire(
     'Guardado exitosamente',
     '',

@@ -1,4 +1,45 @@
-function validarCampos() {
+function validarServicios() {
+  var servicios = document.getElementById('servicios').value;
+  var mensaje = '';
+
+  if (servicios.trim() === '') {
+    mensaje = 'Por favor, ingrese los servicios';
+  } else if (!/^[A-Za-z0-9\s]+$/.test(servicios)) {
+    mensaje = 'El nombre de servicio solo debe contener letras y números';
+  }
+
+  document.getElementById('texto1').innerText = mensaje;
+}
+
+function validarClases() {
+  var clases = document.getElementById('clases').value;
+  var mensaje = '';
+
+  if (clases.trim() === '') {
+    mensaje = 'Por favor, ingrese las clases';
+  }
+
+  document.getElementById('texto2').innerText = mensaje;
+}
+
+
+function validarPrecio() {
+  var precio = document.getElementById('precio').value;
+  var mensaje = '';
+
+  if (precio.trim() === '') {
+    mensaje = 'Por favor, ingrese el precio';
+  } else if (!/^\d+$/.test(precio)) {
+    mensaje = 'El precio debe ser un número entero';
+  } else if (precio < 6000 || precio > 1000000) {
+    mensaje = 'El precio debe estar entre 6000 y 1000000';
+  }
+
+  document.getElementById('texto3').innerText = mensaje;
+}
+
+
+function guardarServicio() {
   var servicios = document.getElementById('servicios').value;
   var clases = document.getElementById('clases').value;
   var precio = document.getElementById('precio').value;
@@ -16,45 +57,6 @@ function validarCampos() {
     return;
   }
 
-  if (!/^[0-9]+$/.test(idServicio)) {
-    Swal.fire(
-      'El idServicio de servicio solo debe contener números',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  // Validación de servicios
-  if (!/^[A-Za-z0-9\s]+$/.test(servicios)) {
-    Swal.fire(
-      'El nombre de servicio solo debe contener letras y números',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  // Validación del precio
-  if (!/^\d+$/.test(precio)) {
-    Swal.fire(
-      'El precio debe ser un número entero',
-      '',
-      'error'
-    );
-    return;
-  }
-
-  // Validación del rango del precio
-  if (precio < 6000 || precio > 1000000) {
-    Swal.fire(
-      'El precio debe estar entre 6000 y 1000000',
-      '',
-      'error'
-    );
-    return;
-  }
-
   Swal.fire(
     'Guardado exitosamente',
     '',
@@ -66,6 +68,7 @@ function validarCampos() {
   }, 4000);
   
 }
+  
 
 function confirmarEliminacion(){
   Swal.fire({

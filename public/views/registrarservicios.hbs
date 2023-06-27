@@ -159,6 +159,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/roles" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Roles</p>
@@ -171,42 +177,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/clientes" class="nav-link ">
-                    <i class="fas fa-user"></i>
-                    <p>Clientes</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/empleados" class="nav-link ">
-                    <i class="fas fa-user-tie"></i>
-                    <p>Empleados</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/Dasboard" class="nav-link">
-                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
-                  <p>Dashboard</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/calendario" class="nav-link ">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Calendario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/programacion" class="nav-link">
-                  <i class="fas fa-code"></i>
-                  <p>Programacion</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/servicios" class="nav-link active">
                   <i class="fas fa-cogs nav-icon"></i>
                   <p>Servicios</p>
@@ -216,6 +186,36 @@
                 <a href="/paquetes" class="nav-link">
                   <i class="fas fa-box nav-icon"></i>
                   <p>Paquetes</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Agenda Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion Clases</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -270,10 +270,11 @@
                         <h2>Agregar Servicios</h2>
                         <form>
                         <label for="servicios">Servicios<span style="color: red;">*</span>:</label>
-                        <input type="text" id="servicios" placeholder="servicios">
+                        <input type="text" id="servicios" oninput="validarServicios()" placeholder="Ingresa lo servicio">
+                        <p id="texto1" style="color: red;"></p>
 
                         <label for="clases">Clases<span style="color: red;">*</span>:</label>
-                        <select id="clases" name="clases" required>
+                        <select id="clases" name="clases" oninput="validarClases()" required>
                           <option id="clases" name="clases">Seleccionar las clases</option>
                           <option value="Maquina, Clases, Spinning">Maquina, Clases, Spinning</option>
                           <option value="Spa, Nutricion, Clases, Maquinas">Spa, Nutricion, Clases, Maquinas</option>
@@ -282,9 +283,11 @@
                           <option value="Acompañamiento, Rumba, Spinning, Maquinas">Acompañamiento, Rumba, Spinning, Maquinas</option>
                           <option value="Acompañamiento, Nutricion, Evaluacion, Maquinas , Clases">Acompañamiento, Nutricion, Evaluacion, Maquinas , Clases</option>
                         </select>
+                        <p id="texto2" style="color: red;"></p>
 
                         <label for="precio">Precio<span style="color: red;">*</span>:</label>
-                        <input type="number" id="precio" placeholder="precio">
+                        <input type="number" id="precio" oninput="validarPrecio()" placeholder="Ingresa el precio">
+                        <p id="texto3" style="color: red;"></p>
 
                         <label for="estado">Estado<span style="color: red;">*</span>:</label>
                         <select id="estado" name="estado" required>
@@ -292,7 +295,7 @@
                           <option value="inactivo">Inactivo</option>
                         </select>
                         <br><br>
-                        <button type="button" class="btn btn-success boton-registro" onclick="validarCampos()">Guardar</button>
+                        <button type="button" class="btn btn-success boton-registro" onclick="guardarServicio()">Guardar</button>
                         <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
                       </form>
                       </div>
