@@ -262,11 +262,15 @@
                             <h2>Agregar Paquete</h2>
                             <form>
                               <label for="paquete">Paquete<span style="color: red;">*</span>:</label>
-                              <input type="text" id="paquete" oninput="validarPaquete()" placeholder="paquete" >
+                              <input type="text" id="paquete" oninput="validarPaquete()" placeholder="Ingresa el nombre del paquete" >
                               <p id="texto1" style="color: red;"></p>
 
-                              <label for="servicios">Servicios<span style="color: red;">*</span>:</label>
-                              <input type="text" id="servicios" oninput="validarServicios()" placeholder="servicios" >
+                              <label for="frecuencia">Frecuencia<span style="color: red;">*</span>:</label>
+                              <input type="text" id="frecuencia" oninput="validarFrecuencia()" placeholder="Ingresa la frecuencia" >
+                              <p id="texto3" style="color: red;"></p>
+
+                              <label for="servicios">Servicio<span style="color: red;">*</span>:</label>
+                              <input type="text" id="servicios" oninput="validarServicios()" placeholder="Ingresa los servicios" >
                               <p id="texto2" style="color: red;"></p>
 
                               <label for="cantidad">Cantidad<span style="color: red;">*</span>:</label>
@@ -274,11 +278,14 @@
                               <a onclick="cantidad()" class="btn btn-dark btn-sm">
                                       <i class="fas fa-plus  fa-sm"></i>
                               </a> 
-                              <p id="texto3" style="color: red;"></p>
+                              <p id="texto4" style="color: red;"></p>
 
                               <label for="total">Total<span style="color: red;">*</span>:</label>
-                              <input type="number" id="total" oninput="validarTotal()" placeholder="total" >
-                              <p id="texto4" style="color: red;"></p>
+                              <output type="text" id="total" oninput="validarTotal()" placeholder="total" >86.000
+
+                              <label for="precioventa">Precio Venta<span style="color: red;">*</span>:</label>
+                              <input type="text" id="precioventa" oninput="validarTotal()" placeholder="Ingrese el precio de venta" >
+                              <p id="texto5" style="color: red;"></p>
 
                               <label for="estado">Estado<span style="color: red;">*</span>:</label>
                               <select id="estado" name="estado" required>

@@ -11,18 +11,6 @@ function validarServicios() {
   document.getElementById('texto1').innerText = mensaje;
 }
 
-function validarClases() {
-  var clases = document.getElementById('clases').value;
-  var mensaje = '';
-
-  if (clases.trim() === '') {
-    mensaje = 'Por favor, ingrese las clases';
-  }
-
-  document.getElementById('texto2').innerText = mensaje;
-}
-
-
 function validarPrecio() {
   var precio = document.getElementById('precio').value;
   var mensaje = '';
@@ -41,7 +29,6 @@ function validarPrecio() {
 
 function guardarServicio() {
   var servicios = document.getElementById('servicios').value;
-  var clases = document.getElementById('clases').value;
   var precio = document.getElementById('precio').value;
 
   if (

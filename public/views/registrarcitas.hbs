@@ -63,6 +63,11 @@
       padding-top: 5px;
 
     }
+
+    .small-calendar {
+      font-size: 0.8rem; /* Ajusta el tamaño de fuente de la tabla */
+      width: 100%; /* Ajusta el ancho de la tabla según sea necesario */
+    }
     
   </style>
 </head>
@@ -268,14 +273,26 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table>
+                <div class="card">
+              <div class="row">
+                <div class="col-6">
+                  <table>
                     <tr>
                     <td>
                         <div  class="form-container">
                         <h2>Agregar Cita</h2>
                         <form>
                           <label for="Nombre_y_Apellido">Nombre y Apellido<span style="color: red;">*</span>:</label>
-                          <input type="text" id="Nombre_y_Apellido" oninput="validarNombreApellido()" placeholder="Ingresa el nombre y apellido">
+                          <select id="Nombre_y_Apellido" name="Nombre_y_Apellido" required>
+                            <option value="seleccionar">Seleccionar nombre</option>
+                            <option value="Juan Lopez">Juan Lopéz</option>
+                            <option value="Jose Fernando">Jose Fernando</option>
+                            <option value="Luis Cancelo">Luis Cancelo</option>
+                            <option value="Hernan Dario">Hernan Dario</option>
+                            <option value="Luisa Fernanda">Luisa Fernanda</option>
+                            <option value="Pedro Luis">Pedro Luis</option>
+                            <option value="Luis Diaz">Luis Diaz</option>
+                          </select>
                           <p id="texto1" style="color: red;"></p>
 
                           <label for="Telefono">Telefono<span style="color: red;">*</span>:</label>
@@ -290,6 +307,13 @@
                           <input type="text" id="Hora" oninput="validarHora()" placeholder="Ingresa la hora">
                           <p id="texto4" style="color: red;"></p>
 
+                          <label for="tipo_servicio">Tipo Servicio<span style="color: red;">*</span>:</label>
+                              <select id="tipo_servicio" name="tipo_servicio" required>
+                              <option value="seleccionar">Seleccionar el servicio</option>
+                              <option value="evaluacion">Evaluación</option>
+                              <option value="nutricion">Nutrición</option>
+                              </select>
+
                           <label for="Restrincciones">Restrincciones<span style="color: red;">*</span>:</label>
                           <textarea id="Restrincciones" oninput="validarRestricciones()" placeholder="Ingresa las restricciones"></textarea>
                           <p id="texto5" style="color: red;"></p>
@@ -299,8 +323,8 @@
 
                           <label for="estado">Estado<span style="color: red;">*</span>:</label>
                           <select id="estado" name="estado" required>
-                            <option value="Asistio">Asistio</option>
                             <option value="Pendiente">Pendiente</option>
+                            <option value="Asistio">Asistio</option>
                             <option value="Cancelo">Cancelo</option>
                           </select>
                           <br><br>
@@ -311,6 +335,150 @@
                     </td>
                     </tr>
                 </table>
+      </div>
+      <div class="col-6">
+        <h2 class="text-center mb-4">Calendario</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered table-sm small-calendar">
+                    <thead class="green-bg">
+                      <tr>
+                        <th scope="col">DO</th>
+                        <th scope="col">LU</th>
+                        <th scope="col">MA</th>
+                        <th scope="col">MI</th>
+                        <th scope="col">JU</th>
+                        <th scope="col">VI</th>
+                        <th scope="col">SA</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          1 <br>
+                          Evaluación <br> Jose <br>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                          </div>
+                        </td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7 <br>
+                          Nutrición <br>Maria<br>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                        </td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>
+                          16 <br>
+                          Nutrición <br>Pedro <br>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                        </td>
+                        <td>17</td>
+                        <td>18</td>
+                      </tr>
+                      <tr>
+                        <td>19</td>
+                        <td>
+                          20 <br>
+                          Evaluación <br>Carlos <br>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                        </td>
+                        <td>21</td>
+                        <td>
+                          22 <br>
+                          Nutrición <br>Lucia <br>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                          </div>
+                        </td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>
+                          25<br>
+                          Evaluación <br>Ismael <br>
+                              <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>26
+                          Nutrición <br> Deimer <br>
+                          <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                        </td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>
+                          31<br>
+                          Nutrición <br>Saturno <br>
+                              <a href="/editarcita" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit fa-sm"></i>
+                                      </a>
+                              <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                      </button>  
+                          </div>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
               </div>
               <!-- /.card-body -->
             </div>

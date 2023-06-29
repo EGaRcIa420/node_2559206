@@ -3,69 +3,82 @@ function validarPaquete() {
 
   if (paquete.trim() === '') {
     document.getElementById('texto1').innerText = 'Por favor, ingrese el nombre del paquete';
-  } else if (!/^[A-Za-z0-9]+$/.test(paquete)) {
-    document.getElementById('texto1').innerText =
-      'El nombre de paquete solo debe contener letras y números';
+  } else if (!/^[0-9#]+$/.test(paquete)) {
+    document.getElementById('texto1').innerText = 'El nombre de paquete solo debe contener números y "#"';
   } else {
     document.getElementById('texto1').innerText = '';
   }
 }
+
 
 function validarServicios() {
   var servicios = document.getElementById('servicios').value;
 
   if (servicios.trim() === '') {
     document.getElementById('texto2').innerText = 'Por favor, ingrese los servicios';
-  } else if (!/^[A-Za-z0-9,\s]+$/.test(servicios)) {
+  } else if (!/^[A-Za-z\s]+$/.test(servicios)) {
     document.getElementById('texto2').innerText =
-      'Los servicios solo deben contener letras, números, comas o espacios';
+      'Los servicios solo deben contener letras o espacios';
   } else {
     document.getElementById('texto2').innerText = '';
   }
 }
   
- 
+function validarFrecuencia() {
+  var frecuencia = document.getElementById('frecuencia').value;
+
+  if (frecuencia.trim() === '') {
+    document.getElementById('texto3').innerText = 'Por favor, ingrese la frecuencia';
+  } else if (!/^[a-zA-Z\s]+$/.test(frecuencia)) {
+    document.getElementById('texto3').innerText = 'La frecuencia solo debe contener letras y espacios';
+  } else {
+    document.getElementById('texto3').innerText = '';
+  }
+}
 
   // Validación de la cantidad
   function validarCantidad() {
     var cantidad = document.getElementById('cantidad').value;
   
     if (cantidad.trim() === '') {
-      document.getElementById('texto3').innerText = 'Por favor, ingrese la cantidad';
+      document.getElementById('texto4').innerText = 'Por favor, ingrese la cantidad';
     } else if (!/^\d+$/.test(cantidad)) {
-      document.getElementById('texto3').innerText = 'La cantidad debe ser un número entero';
-    } else if (cantidad < 1 || cantidad > 8) {
-      document.getElementById('texto3').innerText = 'La cantidad debe estar entre 1 y 8';
+      document.getElementById('texto4').innerText = 'La cantidad debe ser un número entero';
+    } else if (cantidad < 1 || cantidad > 365) {
+      document.getElementById('texto4').innerText = 'La cantidad debe estar entre 1 y 365';
     } else {
-      document.getElementById('texto3').innerText = '';
+      document.getElementById('texto4').innerText = '';
     }
   }
 
 function validarTotal() {
-  var total = document.getElementById('total').value;
+  var precioventa = document.getElementById('precioventa').value;
 
-  if (total.trim() === '') {
-    document.getElementById('texto4').innerText = 'Por favor, ingrese el total';
+  if (precioventa.trim() === '') {
+    document.getElementById('texto5').innerText = 'Por favor, ingrese el total';
   } else if (!/^\d+$/.test(total)) {
-    document.getElementById('texto4').innerText = 'El total debe ser un número entero';
-  } else if (total < 4000 || total > 1000000) {
-    document.getElementById('texto4').innerText = 'El total debe estar entre 4000 y 1000000';
+    document.getElementById('texto5').innerText = 'El total debe ser un número entero';
+  } else if (precioventa < 4000 || total > 1000000) {
+    document.getElementById('texto5').innerText = 'El total debe estar entre 4000 y 1000000';
   } else {
-    document.getElementById('texto4').innerText = '';
+    document.getElementById('texto5').innerText = '';
   }
 }
 
 function validarCamposPaquete() {
   var paquete = document.getElementById('paquete').value;
   var servicios = document.getElementById('servicios').value;
+  var frecuencia = document.getElementById('frecuencia').value;
   var cantidad = document.getElementById('cantidad').value;
-  var total = document.getElementById('total').value;
+  var precioventa = document.getElementById('precioventa').value;
+
 
   if (
     paquete.trim() === '' ||
     servicios.trim() === '' ||
+    frecuencia.trim() === '' ||
     cantidad.trim() === '' ||
-    total.trim() === '' ||
+    precioventa.trim() === '' ||
     estado === ''
   ) {
     Swal.fire(
