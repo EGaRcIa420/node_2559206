@@ -215,15 +215,15 @@
                 </a>
             </li>
               <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Suscripciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
             </ul>
@@ -242,17 +242,19 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tabla Agenda</h1>
+            <h1>Agendamiento Laboral</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/home">Home</a></li>
-              <li class="breadcrumb-item active">Agenda</li>
+              <li class="breadcrumb-item active">Agendamiento Laboral</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+
+
 
     <!-- Main content -->
       <section class="content">
@@ -270,33 +272,34 @@
                 <form>
                   <div class="card-body">
                     <div class="row">
-                      
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="fecha">Fecha<span style="color: red;">*</span>:</label>
-                          <input type="date" class="form-control" id="fecha" placeholder="Ingrese la fecha" required
-                            min="2023-05-19">
+                          <label for="fecha">Fecha</label>
+                          <input type="date" class="form-control" id="fecha" placeholder="Ingrese la hora final"
+                              onchange="ValidarFecha()" required>
+                            <p id="texto1" style="color:red;"></p>
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="horaInicio">Hora Inicio<span style="color: red;">*</span>:</label>
-                          <input type="time" class="form-control" id="horaInicio"
-                            placeholder="Ingrese la hora de inicio" required>
+                          <label for="horaInicio">Hora Inicio</label>
+                          <input type="time" class="form-control" id="horainicio" placeholder="Ingrese la hora final"
+                              onchange="validarHora()" required>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="horaFinal">Hora Final<span style="color: red;">*</span>:</label>
-                          <input type="time" class="form-control" id="horaFinal" placeholder="Ingrese la hora final"
-                            required>
+                          <label for="horaFinal">Hora Final</label>
+                          <input type="time" class="form-control" id="horafinal" placeholder="Ingrese la hora final"
+                              onchange="validarHora()" required>
                         </div>
+                        <p id="texto2" style="color:red;"></p>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="instructor">Instructor<span style="color: red;">*</span>:</label>
+                          <label for="instructor">Instructor</label>
                           <select class="form-control" id="instructor" required>
                             <option value="">Seleccione el Instructor</option>
                             <option value="activo">Pachito Maturana</option>
@@ -309,7 +312,7 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="clase">Clase<span style="color: red;">*</span>:</label>
+                          <label for="clase">Clase</label>
                           <select class="form-control" id="clase" required>
                             <option value="">Seleccione la clase</option>
                             <option value="activo">Maquinas</option>
@@ -320,7 +323,7 @@
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="diaLaboral">Día Laboral<span style="color: red;">*</span>:</label>
+                          <label for="diaLaboral">Día Laboral</label>
                           <select class="form-control" id="diaLaboral" required>
                             <option value="">Seleccione una opción</option>
                             <option value="si">Sí</option>
@@ -332,7 +335,7 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="tdiaLaboral">Aplicar Todos los Días<span style="color: red;">*</span>:</label>
+                          <label for="tdiaLaboral">Aplicar Todos los Días</label>
                           <select class="form-control" id="tdiaLaboral" required>
                             <option value="">Seleccione una opción</option>
                             <option value="si">Sí</option>
@@ -342,7 +345,7 @@
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="todoslmesesLaboral">Aplicar Todos los Meses<span style="color: red;">*</span>:</label>
+                          <label for="todoslmesesLaboral">Aplicar Todos los Meses</label>
                           <select class="form-control" id="todoslmesesLaboral" required>
                             <option value="">Seleccione una opción</option>
                             <option value="si">Sí</option>
@@ -354,7 +357,7 @@
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label for="estado">Estado<span style="color: red;">*</span>:</label>
+                          <label for="estado">Estado</label>
                           <select class="form-control" id="estado" required>
                             <option value="">Seleccione una opción</option>
                             <option value="Activo">Activo</option>
@@ -365,7 +368,7 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
-                        <button type="button" class="btn btn-success" onclick="validarFormulario()">Agregar</button>
+                        <button type="button" class="btn btn-success" onclick="validarFormulario()">Actualizar</button>
                       </div>
                       <div class="col-sm-6">
                         <button type="button" class="btn btn-danger"
@@ -400,11 +403,6 @@
               '',
               'error'
             )
-            // Validar que la fecha no esté vacía
-            if (!clase || !instructor || !horaInicio || !fecha || !horaFinal || !todoslmeseslaboral || !tdiaLaboral || !diaLaboral || !estado) {
-              Swal.fire('Error', 'Todos los campos son obligatiorios.', 'error');
-              return;
-            }
 
             // Validar que la fecha sea mayor o igual a la fecha actual
             var fechaActual = new Date().toISOString().split('T')[0];
@@ -451,6 +449,9 @@
               if (result.isConfirmed) {
                 // Si el usuario confirma la cancelación, redirigirss a la página de calendario
                 window.location.href = 'calendario';
+                setTimeout(() => {
+                  window.location.href = "/calendario";
+                }, 4000);
               }
             });
           }
@@ -468,6 +469,49 @@
               })
             }
           });
+
+           function ValidarFecha() {
+              var fecha = document.getElementById('fecha').value;
+              var fechaActual = new Date().toISOString().split('T')[0];
+              if (fecha < fechaActual) {
+                document.getElementById('texto1').innerText = "La fecha no puede ser inferior a la actual"
+              } else {
+                document.getElementById('texto1').innerText = ""
+              }
+            }
+
+
+            function validarDescripcion() {
+              var descripcion = document.getElementById('descripcion').value;
+
+              if (descripcion === '') {
+                alert('Por favor,la descripcion no puede estar vacia.');
+                return;
+              }
+            }
+
+            function validarHora() {
+              var horainicio = document.getElementById('horainicio').value;
+              var horafinal = document.getElementById('horafinal').value;
+
+              if (horainicio === '') {
+                document.getElementById('texto2').innerText = "La hora inicio no puede estar vacia"
+              }
+
+
+              if (horafinal === '') {
+              }
+
+              if (horainicio > horafinal) {
+                document.getElementById('texto2').innerText = "La hora inicio debe ser inferior a la final"
+              } else {
+                document.getElementById('texto2').innerText = ""
+              }
+
+              // Si todas las validaciones son exitosas, puedes realizar alguna acción adicional aquí
+            }
+
+
       </script>
     </div>
 

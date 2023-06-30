@@ -176,15 +176,15 @@
                 </a>
             </li>
               <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Suscripciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
             </ul>
@@ -215,7 +215,7 @@
       </div><!-- /.container-fluid -->
     </section>
 
-        <!-- Main content -->
+      <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -236,7 +236,6 @@
                   <tr>
                     <th>N°</th>
                     <th>Id Roles</th>
-                    <th>Id Usuarios </th>
                     <th>Nombre rol</th>
                     <th>Permisos Rol</th>
                     <th>estado Rol</th>
@@ -246,15 +245,14 @@
                   <tr>
                     <td>1</td>
                     <td>123</td>
-                    <td>456</td>
                     <td>Administrador</td>
-                    <td>Realizar cambios en los usuarios</td>
+                    <td>Modificar informacion,Visualizar informacion,Agregar,Eliminar</td>
                     <td>inactivo</td>
                     <td>
                            <a href="/editarRoles" class="btn btn-primary btn-sm">
                           <i class="fas fa-edit fa-sm"></i>
                           </a>
-                        <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm"">
+                        <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>    
                     </td>
@@ -262,16 +260,15 @@
                   <tr>
                     <td>2</td>
                     <td>678</td>
-                    <td>736</td>
                     <td>Instructor</td>
-                     <td>Realiza cambios en su perfil</td>
+                     <td>Visualizar,Agregar informacion</td>
                     <td>Activo</td>
                    
                     <td>
                           <a href="/editarRoles" class="btn btn-primary btn-sm">
                           <i class="fas fa-edit fa-sm"></i>
                           </a>
-                         <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm"">
+                         <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
                           </button>    
                     </td>
@@ -279,9 +276,8 @@
                   <tr>
                     <td>3</td>
                     <td>7465</td>
-                    <td>8466</td>
-                    <td>usuario</td>
-                     <td>ver su informacion</td>
+                    <td>secretaria</td>
+                     <td>Visualizar informacion, Modificar informacion,Agregar</td>
                     <td>Activo</td>
                    
                     <td>

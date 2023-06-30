@@ -185,15 +185,15 @@
                 </a>
             </li>
               <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Suscripciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
             </ul>
@@ -305,10 +305,27 @@
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart"
                        style="position: relative; height: 300px;">
+                       <h5>Nro Personas</h5>
+                    <div style="display: block; width: 697px; height: 250px;" width="13" height="60" class="chartjs-render-monitor">
                       <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                      <h5 style="text-align: center;">Meses</h5>
+                    </div>
                    </div>
                   <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                    <h5>Ingreso Asistencias</h5>
+                    <div>
+                      <div style="display: flex; align-items: center;">
+                      <div style="width: 20px; height: 20px; background-color: #f56954; margin-right: 10px;"></div>
+                      <h6>Inasistencias</h6>
+                  </div>
+                  <div style="display: flex; align-items: center;">
+                      <div style="width: 20px; height: 20px; background-color: #00a65a; margin-right: 10px;"></div>
+                      <h6>Asistencias</h6>
+                  </div>
+                    </div>
+                    <div style="display: block; width: 700px; height: 215px;" width="13" height="60" class="chartjs-render-monitor">
+                    <canvas id="sales-chart-canvas" style="display: block; width: 67px; height: 30px;" width="13" height="60" class="chartjs-render-monitor"></canvas>
+                    </div>
                   </div>
                 </div>
               </div><!-- /.card-body -->
@@ -472,17 +489,17 @@
                 <div class="row">
                   <div class="col-4 text-center">
                     <div id="sparkline-1"></div>
-                    <div class="text-white">Personas Ingreso</div>
+                    <div class="text-white">Ingreso Anual</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-4 text-center">
                     <div id="sparkline-2"></div>
-                    <div class="text-white">Clientes Mensualidad</div>
+                    <div class="text-white">Ingreso Asistencias</div>
                   </div>
                   <!-- ./col -->
                   <div class="col-4 text-center">
                     <div id="sparkline-3"></div>
-                    <div class="text-white">Clientes Clases</div>
+                    <div class="text-white">Ingreso Pagos</div>
                   </div>
                   <!-- ./col -->
                 </div>
@@ -509,41 +526,17 @@
                 </div>
               </div>
               <div class="card-body">
+                <h5 style="text-align: center;">Año 2023</h5>
+                <br>
                 <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer bg-transparent">
-                <div class="row">
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
-
-                    <div class="text-white">Visitantes Viejos</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="80" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
-
-                    <div class="text-white">Clientes Activos</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="25" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
-
-                    <div class="text-white">Clientes por Clase</div>
-                  </div>
-                  <!-- ./col -->
-                </div>
-                <!-- /.row -->
-              </div>
               <!-- /.card-footer -->
             </div>
             <!-- /.card -->
             <!-- /.card -->
             <button type="button" class="btn btn-primary boton-registro" onclick="redirigir()">Suscripciones</button>
-
+            
           </section>
           <!-- right col -->
         </div>

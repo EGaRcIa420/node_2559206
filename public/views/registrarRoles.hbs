@@ -205,15 +205,15 @@
                 </a>
             </li>
               <li class="nav-item">
-                <a href="/citas" class="nav-link">
-                  <i class="far fa-calendar-alt nav-icon"></i>
-                  <p>Citas</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="/suscripciones" class="nav-link ">
                     <i class="fas fa-user"></i>
                     <p>Suscripciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
                 </a>
               </li>
             </ul>
@@ -264,19 +264,31 @@
                             <form class="form form-horizontal">
                               <div class="row">
                                 <div class="col-sm-6">
-                                  <label for="paquete">Id Usuarios<span style="color: red;">*</span>:</label>
-                                  <input type="number" id="idusuario" placeholder="id usuario">
-                              
                                   <label for="roles">Nombre rol<span style="color: red;">*</span>:</label>
                                   <input type="text" id="nombrerol" placeholder="nombre rol">
                                 </div>
                               </div>
 
                               <div class="row">
-                                <div class="col-sm-6">
-                                  <label for="roles">Permisos del Rol<span style="color: red;">*</span>:</label>
-                                  <input type="text" id="permisosrol" placeholder="permisos rol">
-                                </div>
+                                  <div class="col-sm-6">
+                                  <label for="estado">Permisos del Rol<span style="color: red;">*</span>: </label>           
+                                  <select id="estadorol" name="estado" required > 
+
+                                    <option value="activo">agenda</option>  
+                                    <option value="inactivo">paquetes</option>
+                                    <option value="inactivo">servicios</option>
+                                    <option value="inactivo">accesso</option>
+                                    <option value="inactivo">suscripciones</option>
+                                    <option value="inactivo">empleados</option>
+                                    <option value="inactivo">citas</option>
+                                    <option value="inactivo"> empleados</option>
+                                  </select>
+                                  <a onclick="cantidad()" class="btn btn-dark btn-sm">
+                                      <i class="fas fa-plus  fa-sm"></i>
+                              </a>
+                                  </div>
+                              </div>
+                              <div class="row"></div>
                                 <div class="col-sm-6">
                                   <label for="estado">Estado<span style="color: red;">*</span>:</label>
                                   <select id="estadorol" name="estado" required>
@@ -284,7 +296,6 @@
                                     <option value="inactivo">Inactivo</option>
                                   </select>
                                 </div>
-                              </div>
                               <br>
                               <div class="row">
                                 <div class="col-sm-12">
@@ -295,102 +306,74 @@
                                 </div>
                               </div>
                             </form>
-                            <br>
-                            <h2>Agregar permisos</h2>
-                            <form>
-                              <div class="row">
-                                <div class="col-sm-6">
-                                  <label for="nombrerol">Nombre del rol<span style="color: red;">*</span>:</label>
-                                  <input type="text" id="nombrerol" placeholder="nombre rol">
-                                </div>
-                                <div class="col-sm-6">
-                                  <label for="estado">Permisos del Rol<span style="color: red;">*</span>:</label>
-                                  <select id="estadorol" name="estado" required>
-                                    <option value="activo">listar</option>
-                                    <option value="inactivo">eliminar</option>
-                                    <option value="inactivo">editar</option>
-                                    <option value="inactivo">listar,eliminar,agregar</option>
-                                    <option value="inactivo">listar,eliminar</option>
-                                    <option value="inactivo">listar,agregar</option>
-                                    <option value="inactivo">listar,agregar,editar</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <br>
-                              <div class="row">
-                                <div class="col-sm-12">
-                                  <button type="button" class="btn btn-success boton-registro"
-                                    onclick="validarRoles()">Guardar</button>
-                                  <button type="button" class="btn btn-danger boton-cancelar"
-                                    onclick="window.location.href='/roles'">Cancelar</button>
-                                </div>
-                              </div>
-                            </form>
+                           
                          <td>
                         <div class="card-body">
                           <table id="example12" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                              <th>nombre del Rol</th>
+                             
                               <th>Permisos del rol</th>
-                              <th>Cantidad</th>
+                           
                               <th>Acciones</th>
                             </tr>
                             </thead>
                             <tr>
-                              <td>Administrador</td>
-                              <td>listar,agregar,editar</td>
-                              <td>2</td>                         
-                            
+
+                              <td>Empleados</td>
                               <td>
-                                  <button class="btn btn-primary btn-sm">
-                                      <i class="fas fa-edit  fa-sm"></i>
-                                  </button>
-                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                  </button> 
-                                  <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
-                                           </td>
-                            </tr>
-                            <tr>
-                              <td>Instructor</td>
-                              <td>listar,agregar</td>
-                              <td>3</td>
-                               
-                              <td>
-                                  <button class="btn btn-primary btn-sm">
-                                      <i class="fas fa-edit  fa-sm"></i>
-                                  </button>
-                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                  </button> 
-                                  <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
-                              </td>
-                            </tr>
-                            <tr>  
-                              <td>secretaria</td>
-                              <td>editar,listar</td>
-                              <td>5</td>                         
-                              <td>
-                                  <button class="btn btn-primary btn-sm">
-                                      <i class="fas fa-edit  fa-sm"></i>
-                                  </button>
-                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
                                   
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
                                   </button> 
-                                  <button type="button" class="btn btn-outline-success sm-1" >Mas</button>
-                              </td>
+                              
+                                           </td>
+                              <tr>
+                              <td>Acceso</td>
+                              <td>
+                                  
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                              
+                                           </td>
+                              </tr>
+                              <tr>
+                              <td>Agenda</td>
+                              <td>
+                                  
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                              
+                                           </td>
+                              </tr>
+                              <tr>
+                              <td>Usuarios</td>
+                              <td>
+                                  
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                              
+                                           </td>
+                              </tr>
+                              <td>Suscripciones</td>
+                              <td>
+                                  
+                                  </button>
+                                  <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button> 
+                              
+                                           </td>
+                              <tr></tr>
                             </tr>
                             </tbody>
-                            <tfoot>
-                              <td></td>
-                              <td></td>
-                              <td></td>                         
-                              
-                              <td>
-                              </td>
-                            </tfoot>
                             </table>
                         </div>
                       </td>

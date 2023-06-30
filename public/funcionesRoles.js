@@ -1,16 +1,12 @@
 function validarRoles() {
   
-  var idusuario = document.getElementById('idusuario').value;
+ 
   var nombrerol = document.getElementById('nombrerol').value;
-  var permisosrol = document.getElementById('permisosrol').value;
+  
   
 
   if (
-    
-    idusuario.trim() === '' ||
-    nombrerol.trim() === '' ||
-    permisosrol.trim() === ''
-    
+    nombrerol.trim() === '' 
   ) {
     Swal.fire(
       'Por favor, complete todos los campos',
@@ -22,14 +18,7 @@ function validarRoles() {
 
   
 
-  if (!/^[0-9]+$/.test(idusuario)) {
-    Swal.fire(
-      'El id de usuario  solo debe contener números',
-      '',
-      'error'
-    );
-    return;
-  }
+
 
   // Validación de servicios
   if (!/^[a-zA-Z]+$/.test(nombrerol)) {
@@ -40,14 +29,7 @@ function validarRoles() {
     );
     return;
   }
-  if (!/^[a-zA-Z]+$/.test(permisosrol)) {
-    Swal.fire(
-      'los permisos del rol solo debe contener letras ',
-      '',
-      'error'
-    );
-    return;
-  }
+  
 
  
 
