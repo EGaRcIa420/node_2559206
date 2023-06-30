@@ -118,15 +118,16 @@
     <h1>Recuperar Contraseña</h1>
     <form>
       <div class="form-group">
-        <label for="email">Correo Electrónico<span style="color: red;">*</span>:</label>
+        <label for="email">Correo Electrónico</label>
         <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
       </div>
-      <div class="button-container">
+      {{!-- <div class="button-container">
         <button type="button" class="btn btn-primary" onclick="enviarRecuperacion()">Enviar</button>
-      </div>
+      </div> --}}
       <div class="button-container">
-        <button type="button" class="btn btn-danger" onclick="volverInicio()">Regresar</button>
-      </div>
+        <button type="button" class="btn btn-primary"  onclick=" enviarRecuperacion()" >Enviar</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+      </div>     
     </form>
   </div>
 

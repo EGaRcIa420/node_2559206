@@ -262,20 +262,27 @@
                         <h2>Registrar empleado</h2>
                         <form> <h6>Los campos con * son obligatorios</h6>
                             <label for="cedula">Cedula:<span style="color: red;">*</style></label>
-                            <input type="number" id="cedula" placeholder="Cedula *" >
+                            <input type="text" id="cedula" oninput="validarcedula()" placeholder="Cedula *" >
+                            <p id="texto1" style="color: red;"></p>
+
 
                             <label for="Nombre_de_empleado">Nombre de empleado:<span style="color: red;">*</style></label>
-                            <input type="text" id="Nombre_de_empleado" placeholder="Nombre de empleado *" >
+                            <input type="text" id="Nombre_de_empleado" oninput="validarNombre_de_empleado()" placeholder="Nombre de empleado *">
+                            <p id="texto2" style="color: red;"></p>
+
 
                             <label for="Telefono">Telefono:<span style="color: red;">*</style></label>
-                            <input type="number" id="Telefono" placeholder="Telefono *" >
+                            <input type="text" id="Telefono" oninput="validarTelefono()" placeholder="Telefono *" >
+                            <p id="texto3" style="color: red;"></p>
+
 
                             <label for="Correo">Correo:<span style="color: red;">*</style></label>
-                            <input type="texto" id="Correo" placeholder="Correo *" >
+                            <input type="texto" id="Correo" oninput="validarCorreo()" placeholder="ejemplo@hotmail.com *" >                            
+                            <p id="texto4" style="color: red;"></p>
 
                             <form>
                             <label for="Hoja_de_vida">Subir hoja de vida:<span style="color: red;">*</style></label>
-                            <input type="file" id="Hoja_de_vida" name="Hoja de vida *">
+                            <input type="file" id="Hoja_de_vida" name="Hoja de vida *"><br>
                             <!--<button type="submit">Enviar</button>-->
                             </form>
 
@@ -303,6 +310,7 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+  </div>ntent -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

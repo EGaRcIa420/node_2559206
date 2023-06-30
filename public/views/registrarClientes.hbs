@@ -261,23 +261,34 @@
                         <div  class="form-container">
                         <h2>Registrar clientes</h2>
                         <form><h6>Los campos con * son obligatorios</h6>
-                            <label for="cedula">Cedula<span style="color: red;">*</style></label>
-                            <input type="number" id="cedula" placeholder="cedula *" >
+                            <label for="cedula">Cedula:<span style="color: red;">*</style></label>
+                            <input type="text" id="cedula" oninput="validarcedula()" placeholder="Cedula *" >
+                            <p id="texto1" style="color: red;"></p>
 
                             <label for="Nombre_de_cliente">Nombre de cliente:<span style="color: red;">*</style></label>
-                            <input type="text" id="Nombre_de_cliente" placeholder="Nombre de cliente *" >
+                            <input type="text" id="Nombre_de_cliente" oninput="validarNombre_de_cliente()" placeholder="Nombre de cliente *" >                            
+                            <p id="texto2" style="color: red;"></p>
 
                             <label for="Telefono">Telefono:<span style="color: red;">*</style></label>
-                            <input type="number" id="Telefono" placeholder="Telefono *" >
+                            <input type="text" id="Telefono" oninput="validarTelefono()" placeholder="Telefono *" > 
+                            <p id="texto3" style="color: red;"></p>
 
+
+                            {{!-- <label for="Fecha">Fecha de inicio:<span style="color: red;">*</style></label>
+                            <input type="date" id="Fecha" oninput="validarFecha()"   placeholder="Fecha *" >         
+                            <p id="texto4" style="color: red;"></p> 
                             <label for="Fecha">Fecha de inicio:<span style="color: red;">*</style></label>
-                            <input type="date" id="Fecha" placeholder="Fecha *" >
+                            <input type="date" id="Fecha" placeholder="Fecha *">--}}
 
-                            <label for="correo">correo:<span style="color: red;">*</style></label>
-                            <input type="texto" id="correo" placeholder="correo *" >
 
-                            <label for="Restrincciones">Restrincciones:<span style="color: red;">*</style></label>
-                            <input type="text" id="Restrincciones" placeholder="Restrincciones *" >
+                            <label for="Correo">correo:<span style="color: red;">*</style></label>
+                            <input type="texto" id="Correo" oninput="validarCorreo()"  placeholder="ejemplo@hotmail.com *" >
+                            <p id="texto5" style="color: red;"></p>
+
+
+                            <label for="Restricciones">Restrincciones:<span style="color: red;">*</style></label>
+                            <input type="text" id="Restricciones" oninput="validarRestricciones()" placeholder="Ingresar restricciones *" >
+                            <p id="texto6" style="color: red;"></p>
 
                             <label for="estado">Estado:</label>
                             <select id="estado" name="estado" required>

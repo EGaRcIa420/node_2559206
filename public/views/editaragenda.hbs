@@ -3,68 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PROYECTO | T.H.O.R</title>
+  <title>Nueva Agenda  | THOR</title>
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
 
-  <style>
-    .btn {
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-    .form-container {
-      width: 400px;
-      padding: 20px;
-      background-color: #f2f2f2;
-      border-radius: 8px;
-    }
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
 
-    .form-container label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .form-container input[type="text"],
-    .form-container select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-
-    .form-container input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .boton-registro {
-      margin-bottom: 10px; /* Agregar margen inferior */
-    }
-
-    .boton-cancelar {
-      margin-bottom: 10px; /* Agregar margen inferior */
-    }
-    
-  </style>
 </head>
-
-<body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -112,12 +64,11 @@
           </form>
         </div>
       </li>
-  <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="index3.html" class="brand-link">
       <img src="dist/img/logo.png" alt="Nuevo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">PROYECTO T.H.O.R</span>
     </a>
@@ -130,7 +81,7 @@
           <img src="https://t1.uc.ltmcdn.com/es/posts/5/8/6/cuantas_calorias_se_queman_en_el_gym_48685_orig.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Emmanuel García</a>
+          <a href="#" class="d-block">Admin</a>
         </div>
       </div>
 
@@ -283,7 +234,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="horaInicio">Hora Inicio</label>
-                          <input type="time" class="form-control" id="horainicio" placeholder="Ingrese la hora final"
+                          <input type="time" class="form-control" id="horaInicio" placeholder="Ingrese la hora final"
                               onchange="validarHora()" required>
                         </div>
                       </div>
@@ -292,7 +243,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="horaFinal">Hora Final</label>
-                          <input type="time" class="form-control" id="horafinal" placeholder="Ingrese la hora final"
+                          <input type="time" class="form-control" id="horaFinal" placeholder="Ingrese la hora final"
                               onchange="validarHora()" required>
                         </div>
                         <p id="texto2" style="color:red;"></p>
@@ -325,7 +276,7 @@
                         <div class="form-group">
                           <label for="diaLaboral">Día Laboral</label>
                           <select class="form-control" id="diaLaboral" required>
-                            <option value="">Seleccione una opción</option>
+                   
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                           </select>
@@ -337,7 +288,6 @@
                         <div class="form-group">
                           <label for="tdiaLaboral">Aplicar Todos los Días</label>
                           <select class="form-control" id="tdiaLaboral" required>
-                            <option value="">Seleccione una opción</option>
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                           </select>
@@ -347,7 +297,7 @@
                         <div class="form-group">
                           <label for="todoslmesesLaboral">Aplicar Todos los Meses</label>
                           <select class="form-control" id="todoslmesesLaboral" required>
-                            <option value="">Seleccione una opción</option>
+                        
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                           </select>
@@ -368,7 +318,7 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
-                        <button type="button" class="btn btn-success" onclick="validarFormulario()">Actualizar</button>
+                        <button type="button" class="btn btn-success" onclick="validarFormulario()">Agregar</button>
                       </div>
                       <div class="col-sm-6">
                         <button type="button" class="btn btn-danger"
@@ -382,11 +332,55 @@
           </div>
         </div>
       </section>
+    </div>
 
-      <script>
+  </div>
+  <div class="form-group">
+  </div>
+  </form>
+  </div>
+  <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+  </div>
+  <!--/.col (right) -->
+  </div>
+  <!-- /.row -->
+  </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
+    Todos los derechos reservados.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0
+    </div>
+  </footer>
 
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
 
-
+<!-- jQuery -->
+<script src="Cerrar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
         function validarFormulario() {
           var fecha = document.getElementById("fecha").value;
           var horaInicio = document.getElementById("horaInicio").value;
@@ -425,9 +419,8 @@
                 showConfirmButton: false,
                 timer: 1500
               })
-            }
-
-            else {
+            } }
+          else {
               Swal.fire({
                 icon: 'success',
                 title: 'Se ha agregado exitosamente',
@@ -435,7 +428,6 @@
                 timer: 1500
               })
             }
-          }
         }
           function mostrarConfirmacionCancelar() {
             Swal.fire({
@@ -449,9 +441,6 @@
               if (result.isConfirmed) {
                 // Si el usuario confirma la cancelación, redirigirss a la página de calendario
                 window.location.href = 'calendario';
-                setTimeout(() => {
-                  window.location.href = "/calendario";
-                }, 4000);
               }
             });
           }
@@ -491,8 +480,8 @@
             }
 
             function validarHora() {
-              var horainicio = document.getElementById('horainicio').value;
-              var horafinal = document.getElementById('horafinal').value;
+              var horainicio = document.getElementById('horaInicio').value;
+              var horafinal = document.getElementById('horaFinal').value;
 
               if (horainicio === '') {
                 document.getElementById('texto2').innerText = "La hora inicio no puede estar vacia"
@@ -513,81 +502,10 @@
 
 
       </script>
-    </div>
-
-  </div>
-  <div class="form-group">
-  </div>
-  </form>
-  </div>
-  <!-- /.card-body -->
-  </div>
-  <!-- /.card -->
-  </div>
-  <!--/.col (right) -->
-  </div>
-  <!-- /.row -->
-  </div><!-- /.container-fluid -->
-  </section>
-  <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
-    Todos los derechos reservados.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0
-    </div>
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="Cerrar.js"></script>
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../plugins/jszip/jszip.min.js"></script>
-<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<!-- Page specific script -->
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+$(function () {
+  bsCustomFileInput.init();
+});
 </script>
 </body>
 </html>

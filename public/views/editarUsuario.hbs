@@ -130,7 +130,7 @@
           <img src="https://t1.uc.ltmcdn.com/es/posts/5/8/6/cuantas_calorias_se_queman_en_el_gym_48685_orig.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Emmanuel García</a>
+          <a href="#" class="d-block">Equipo THOR</a>
         </div>
       </div>
 
@@ -269,25 +269,37 @@
                     <tr>
                     <td>
                         <div  class="form-container">
-                        <h2>Actualizar Usuarios</h2>
+                        <h2>Registrar usuario</h2>
                         <form><h6>Los campos con * son obligatorios</h6>
-                            <label for="Nombre_de_usuario">Nombre de usuario:<span style="color: red;">*</style></label>
-                            <input type="text" id="Nombre_de_usuario" placeholder="Nombre de usuario" >
+                            <label for="nombre">Nombre de usuario:<span style="color: red;">*</style></label>
+                            <input type="text" id="nombre" oninput="validarNombre_de_usuario()" placeholder="Nombre de usuario *" >                            
+                            <p id="texto1" style="color: red;"></p>
 
                             <label for="tipo_de_usuario">Tipo de usuario:<span style="color: red;">*</style></label>
-                            <select name="tipo_de_usuario" id="tipo_de_usuario" required>
+                            <select name="tipo_de_usuario" id="tipode_usuario" required>
                               <option value="Administrador">Administrador</option>
                               <option value="Empleado">Empleado</option>
                               <option value="Cliente">Cliente</option>
                             </select>
                             <label for="correo_de_usuario">Correo de usuario:<span style="color: red;">*</style></label>
-                            <input type="text" id="correo_de_usuario" placeholder="Correo de usuario" >
+                            <input type="text" id="correo_de_usuario" oninput="validarCorreo()" placeholder="correo de usuario *" >
+                            <p id="texto3" style="color: red;"></p>
 
-                            <label for="Password">Password<span style="color: red;">*</style></label>
-                            <input id="password" type="password" class="validate">
                             
-                            <label for="confirmPass">Confirmar Password<span style="color: red;">*</style></label>
-                            <input id="confirmarPassword" type="password" class="validate">
+                            {{!-- <label for="Password">Password<span style="color: red;">*</style></label>
+                            <input id="password" type="password" class="validate" oninput="validarPassword()" placeholder="ingresar contraseña *">                            
+                            <p id="texto4" style="color: red;"></p> --}}
+
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" placeholder="Contraseña">
+                            
+                            {{!-- <label for="confirmarPassword">Confirmar Password<span style="color: red;">*</style></label>
+                            <input id="confirmarPassword" type="password" class="validate"  oninput="validarconfirmarPassword()" placeholder="confirmar  contraseña *">
+                            <p id="texto5" style="color: red;"></p> --}}
+
+                            <label for="confirmarPassword">Confirmar Contraseña:</label>
+                            <input type="password" id="confirmarPassword" placeholder="Confirmar Contraseña">
+
 
                             <label for="estado">Estado:</label>
                             <select id="estado" name="estado" required>
@@ -298,7 +310,8 @@
                             <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
                     
                         </div>
-                            </td>
+                          
+                    </td>
                     </tr>
                 </table>
               </div>

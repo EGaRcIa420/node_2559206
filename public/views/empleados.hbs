@@ -216,109 +216,117 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Listado de Empleados</h3>
-              </div>
-              <div class="col-lg-12">
-                <button class="btn"><i class="fas fa-plus">
-                    <a class="btn btn-dark boton-registro" href="/registrarEmpleados">
-                    Nuevo Empleado</a></i></button>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Listado de Empleados</h3>
+                </div>
+                <div class="col-lg-12">
+                  <button class="btn"><i class="fas fa-plus">
+                      <a class="btn btn-dark boton-registro" href="/registrarEmpleados">
+                        Nuevo Empleado</a></i></button>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                        <tr>
-                            <th>Id empleado</th>
-                            <th>Cedula</th>
-                            <th>Nombre de empleado</th>
-                            <th>Telefono</th>
-                            <th>Correo</th>
-                            <th>Hoja de vida</th>
-                            <th>Horarios</th>
-                            <th>Estado</th>                                            
-                            <th>Acciones</th>
-                        </tr>
+                      <tr>
+                        <th>Id empleado</th>
+                        <th>Cedula</th>
+                        <th>Nombre de empleado</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th>Hoja de vida</th>
+                        <th>Programación</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>543216789</td>
-                            <td>Carlos Rodríguez</td>
-                            <td>543216789</td>
-                            <td>carlos.rodriguez@example.com</td>
-                            <td><i class="fas fa-file-alt"></i></td>
-                            <td><a href="programacion" class="btn btn-primary btn-sm">
-                            <i class="material-icons right"> ir a horarios</i>
-                          </a></td>
-                            <td>Inactivo</td>
-                            <td>
+                      <tr>
+                        <td>1</td>
+                        <td>543216789</td>
+                        <td>Carlos Rodríguez</td>
+                        <td>543216789</td>
+                        <td>carlos.rodriguez@example.com</td>
+                        <td style="text-align: center;">
+                          <a class="fas fa-file-alt" href="https://cutt.ly/QwyHjrey"></a>
+                        </td>                        
+                        <td>
+                          <a href="/programacion" class="btn btn-primary btn-sm" style="background-color: rgba(102, 101, 101, 0.747);">
+                          <i class="material-icons right">ir a programacion</i></a>
+                        </td>
+                        <td>Inactivo</td>
+                        <td>
                           <a href="/editarEmpleado" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
                           <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                          </td>
-                            <tr>
-                                <td>2</td>
-                            <td>736363636</td>
-                            <td>Radamel yunsuy</td>
-                            <td>9837333</td>
-                            <td>Radamel@example.com</td>
-                            <td><i class="fas fa-file-alt"></i></td>                           
-                             <td><a href="programacion" class="btn btn-primary btn-sm">
-                            <i class="material-icons right"> ir a horarios</i>
-                          </a></td>
-                            <td>Inactivo</td>
-                                <td>
+                          </button>
+                        </td>
+                      <tr>
+                        <td>2</td>
+                        <td>736363636</td>
+                        <td>Radamel yunsuy</td>
+                        <td>9837333</td>
+                        <td>Radamel@example.com</td>
+                        <td style="text-align: center;">
+                          <a class="fas fa-file-alt" href="https://cutt.ly/QwyHjrey"></a>
+                        </td><td>
+                          <a href="/programacion" class="btn btn-primary btn-sm" style="background-color: rgba(102, 101, 101, 0.747);">
+                          <i class="material-icons right">ir a programacion</i></a>
+                        </td>
+                        <td>Inactivo</td>
+                        <td>
                           <a href="/editarEmpleado" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
                           <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                  </td>
-                            <tr>
-                                <td>3</td>
-                            <td>37363533663</td>
-                            <td>Pachito Maturana</td>
-                            <td>543216789</td>
-                            <td>Pachito@example.com</td>
-                            <td><i class="fas fa-file-alt"></i></td>                            
-                            <td><a href="programacion" class="btn btn-primary btn-sm">
-                            <i class="material-icons right"> ir a horarios</i>
-                          </a></td>
-                            <td>Inactivo</td>
-                                <td>
+                          </button>
+                        </td>
+                      <tr>
+                        <td>3</td>
+                        <td>37363533663</td>
+                        <td>Pachito Maturana</td>
+                        <td>543216789</td>
+                        <td>Pachito@example.com</td>
+                        <td style="text-align: center;">
+                          <a class="fas fa-file-alt" href="https://cutt.ly/QwyHjrey"></a>
+                        </td>
+                        <td>
+                          <a href="/programacion" class="btn btn-primary btn-sm" style="background-color: rgba(102, 101, 101, 0.747);">
+                          <i class="material-icons right">ir a programacion</i></a>
+                        </td>
+                        <td>Inactivo</td>
+                        <td>
                           <a href="/editarEmpleado" class="btn btn-primary btn-sm">
                             <i class="fas fa-edit fa-sm"></i>
                           </a>
                           <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>
-                          </button>                    
-                  </td>
+                          </button>
+                        </td>
                     </tbody>
-                    
-                </table>
+
+                  </table>
+                </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-body -->
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
+            <!-- /.col -->
           </div>
-          <!-- /.col -->
+          <!-- /.row -->
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>

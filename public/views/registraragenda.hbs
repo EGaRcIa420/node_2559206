@@ -234,7 +234,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="horaInicio">Hora Inicio</label>
-                          <input type="time" class="form-control" id="horainicio" placeholder="Ingrese la hora final"
+                          <input type="time" class="form-control" id="horaInicio" placeholder="Ingrese la hora final"
                               onchange="validarHora()" required>
                         </div>
                       </div>
@@ -243,7 +243,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="horaFinal">Hora Final</label>
-                          <input type="time" class="form-control" id="horafinal" placeholder="Ingrese la hora final"
+                          <input type="time" class="form-control" id="horaFinal" placeholder="Ingrese la hora final"
                               onchange="validarHora()" required>
                         </div>
                         <p id="texto2" style="color:red;"></p>
@@ -276,7 +276,7 @@
                         <div class="form-group">
                           <label for="diaLaboral">Día Laboral</label>
                           <select class="form-control" id="diaLaboral" required>
-                            <option value="">Seleccione una opción</option>
+                   
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                           </select>
@@ -288,7 +288,6 @@
                         <div class="form-group">
                           <label for="tdiaLaboral">Aplicar Todos los Días</label>
                           <select class="form-control" id="tdiaLaboral" required>
-                            <option value="">Seleccione una opción</option>
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                           </select>
@@ -298,7 +297,7 @@
                         <div class="form-group">
                           <label for="todoslmesesLaboral">Aplicar Todos los Meses</label>
                           <select class="form-control" id="todoslmesesLaboral" required>
-                            <option value="">Seleccione una opción</option>
+                        
                             <option value="si">Sí</option>
                             <option value="no">No</option>
                           </select>
@@ -420,9 +419,8 @@
                 showConfirmButton: false,
                 timer: 1500
               })
-            }
-
-            else {
+            } }
+          else {
               Swal.fire({
                 icon: 'success',
                 title: 'Se ha agregado exitosamente',
@@ -430,7 +428,6 @@
                 timer: 1500
               })
             }
-          }
         }
           function mostrarConfirmacionCancelar() {
             Swal.fire({
@@ -483,8 +480,8 @@
             }
 
             function validarHora() {
-              var horainicio = document.getElementById('horainicio').value;
-              var horafinal = document.getElementById('horafinal').value;
+              var horainicio = document.getElementById('horaInicio').value;
+              var horafinal = document.getElementById('horaFinal').value;
 
               if (horainicio === '') {
                 document.getElementById('texto2').innerText = "La hora inicio no puede estar vacia"
