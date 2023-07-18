@@ -154,6 +154,15 @@ app.get('/editarprogramacion', (req, res)=>{
     res.render('editarprogramacion')
 })
 
+app.get('/valoracion', (req, res)=>{
+    res.render('valoracion')
+})
+
+app.get('/registrarvaloracion', (req, res)=>{
+    res.render('registrarvaloracion')
+})
+
+
 app.listen(puerto,()=>{
     console.log(`Escuchando por el puerto ${puerto}`)
 })

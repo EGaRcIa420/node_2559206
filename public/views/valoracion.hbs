@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROYECTO | T.H.O.R</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.min.css">
+  <style>
+    .btn {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  canvas#grafica-imc {
+    max-width: 400px;
+    max-height: 300px;
+  }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="dist/img/Weightlifting free icons designed by Freepik.png" alt="Nuevo Logo" height="60" width="60">
+
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/home" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+      <button class="btn btn-outline-info" type="button" id="botoncerrar">Cerrar</button>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="dist/img/logo.png" alt="Nuevo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">PROYECTO T.H.O.R</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="https://t1.uc.ltmcdn.com/es/posts/5/8/6/cuantas_calorias_se_queman_en_el_gym_48685_orig.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Emmanuel García</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>
+                Módulos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/roles" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Roles</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/usuarios" class="nav-link">
+                    <i class="fas fa-user"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/servicios" class="nav-link ">
+                  <i class="fas fa-cogs nav-icon"></i>
+                  <p>Servicios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/paquetes" class="nav-link">
+                  <i class="fas fa-box nav-icon"></i>
+                  <p>Paquetes</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Agenda Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion Clases</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/suscripciones" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Suscripciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+</nav>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Valoración Deportiva</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
+              <li class="breadcrumb-item active">Valoración Deportiva</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Valoración Deportiva</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Datos del Usuario</h3>
+              </div>
+              <div class="card-body">
+                <div class="row mb-2">
+                  <div class="col-sm-6">
+                    <strong>Nombre:</strong> Juan Pérez
+                  </div>
+                  <div class="col-sm-6">
+                    <strong>Cédula:</strong> 1045687900
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-sm-6">
+                    <strong>Nro de Suscripción:</strong> Anualidad
+                  </div>
+                  <div class="col-sm-6">
+                    <strong>Estado:</strong>
+                    <button class="btn btn-success btn-sm">Activo</button>
+                  </div>
+                </div>
+                <div class="row mb-2">
+                  <div class="col-sm-6">
+                    <strong>Fecha de Inicio:</strong> 01/01/2023
+                  </div>
+                  <div class="col-sm-6">
+                    <strong>Fecha de Fin:</strong> 31/12/2023
+                  </div>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="/registrarvaloracion" class="btn btn-primary">Agregar Valoración</a>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-4">
+      <div class="card-header">
+        <h3 class="card-title">Gráfica de IMC</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+        <canvas id="grafica-imc"></canvas>
+        </div>
+        <div class="row"> 
+        <div class="text-center mt-3">
+          <button class="btn btn-info">Imprimir</button>
+        </div></div>
+      </div>
+    </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Valoraciones</h3>
+              </div>
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Nro</th>
+                      <th>Mes</th>
+                      <th>F. Cardiaca</th>
+                      <th>F. Respiratoria</th>
+                      <th>Presión Arterial</th>
+                      <th>Oxi. Sangre</th>
+                      <th>Imc</th>
+                      <th>Peso</th>
+                      <th>Altura</th>
+                      <th>Clasificación</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Enero</td>
+                      <td>20</td>
+                      <td>25</td>
+                      <td>-10</td>
+                      <td>0.0</td>
+                      <td>17.0</td>
+                      <td>43 Kg</td>
+                      <td>1.55 Cm</td>
+                      <td>Infrapeso: Delgadez aceptable</td>
+                      <td>Activo</td>
+                      <td>
+                        <button onclick="openModal(1)" class="btn btn-warning btn-sm">
+                          <i class="fas fa-file fa-sm"></i>
+                        </button>
+                        <button onclick="anularValoracion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>      
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Febrero</td>
+                      <td>30</td>
+                      <td>16</td>
+                      <td>-20</td>
+                      <td>0.1</td>
+                      <td>18.5</td>
+                      <td>48 Kg</td>
+                      <td>1.59 Cm</td>
+                      <td>Infrapeso: Delgadez aceptable</td>
+                      <td>Activo</td>
+                      <td>
+                        <button onclick="openModal(2)" class="btn btn-warning btn-sm">
+                          <i class="fas fa-file fa-sm"></i>
+                        </button>
+                        <button onclick="anularValoracion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>      
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Marzo</td>
+                      <td>40</td>
+                      <td>27</td>
+                      <td>-30</td>
+                      <td>0.2</td>
+                      <td>20.7</td>
+                      <td>58 Kg</td>
+                      <td>1.74 Cm</td>
+                      <td>Peso: Normal</td>
+                      <td>Activo</td>
+                      <td>
+                        <button onclick="openModal(3)" class="btn btn-warning btn-sm">
+                          <i class="fas fa-file fa-sm"></i>
+                        </button>
+                        <button onclick="anularValoracion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>      
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Abril</td>
+                      <td>50</td>
+                      <td>18</td>
+                      <td>-40</td>
+                      <td>0.3</td>
+                      <td>22.2</td>
+                      <td>64 Kg</td>
+                      <td>1.80 Cm</td>
+                      <td>Peso: Normal</td>
+                      <td>Activo</td>
+                      <td>
+                        <button onclick="openModal(4)" class="btn btn-warning btn-sm">
+                          <i class="fas fa-file fa-sm"></i>
+                        </button>
+                        <button onclick="anularValoracion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>      
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="valoracionModal" tabindex="-1" aria-labelledby="valoracionModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="valoracionModalLabel">Valoración</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="valoracionContent">
+          <!-- Aquí se mostrará la información de la valoración -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function openModal(valoracionId) {
+    // Lógica para obtener la información de la valoración y mostrarla en el modal
+    var valoracion = obtenerValoracion(valoracionId);
+    mostrarInformacion(valoracion);
+    $('#valoracionModal').modal('show');
+  }
+
+  function obtenerValoracion(valoracionId) {
+    // Lógica para obtener la información de la valoración según su ID
+    // Aquí puedes implementar tu propia lógica para obtener la información de la valoración desde tu backend o una fuente de datos
+    // Por ahora, retornaré datos de ejemplo para mostrar en el modal
+
+    var valoraciones = [
+      {
+        id: 1,
+        mes: 'Enero',
+        frecuenciaCardiaca: 20,
+        frecuenciaRespiratoria: 25,
+        presionArterial: -10,
+        oxigenoSangre: 0.0,
+        imc: 17.0,
+        peso: '43 Kg',
+        altura: '1.55 Cm',
+        clasificacion: 'Sobre Peso',
+        estado: 'Activo'
+      },
+      {
+        id: 2,
+        mes: 'Febrero',
+        frecuenciaCardiaca: 30,
+        frecuenciaRespiratoria: 16,
+        presionArterial: -20,
+        oxigenoSangre: 0.1,
+        imc: 18.5,
+        peso: '48 Kg',
+        altura: '1.59 Cm',
+        clasificacion: 'Sobre Peso',
+        estado: 'Activo'
+      },
+      {
+        id: 3,
+        mes: 'Marzo',
+        frecuenciaCardiaca: 40,
+        frecuenciaRespiratoria: 27,
+        presionArterial: -30,
+        oxigenoSangre: 0.2,
+        imc: 20.7,
+        peso: '58 Kg',
+        altura: '1.74 Cm',
+        clasificacion: 'Equilibrado',
+        estado: 'Activo'
+      },
+      {
+        id: 4,
+        mes: 'Abril',
+        frecuenciaCardiaca: 50,
+        frecuenciaRespiratoria: 18,
+        presionArterial: -40,
+        oxigenoSangre: 0.3,
+        imc: 22.2,
+        peso: '64 Kg',
+        altura: '1.80 Cm',
+        clasificacion: 'Peso Ideal',
+        estado: 'Activo'
+      }
+    ];
+
+    return valoraciones.find(function (valoracion) {
+      return valoracion.id === valoracionId;
+    });
+  }
+
+  function mostrarInformacion(valoracion) {
+    // Mostrar la información de la valoración en el modal
+    var valoracionContent = document.getElementById('valoracionContent');
+
+    valoracionContent.innerHTML = `
+      <p><strong>Mes:</strong> ${valoracion.mes}</p>
+      <p><strong>F. Cardiaca:</strong> ${valoracion.frecuenciaCardiaca}</p>
+      <p><strong>F. Respiratoria:</strong> ${valoracion.frecuenciaRespiratoria}</p>
+      <p><strong>Presión Arterial:</strong> ${valoracion.presionArterial}</p>
+      <p><strong>Oxi. Sangre:</strong> ${valoracion.oxigenoSangre}</p>
+      <p><strong>IMC:</strong> ${valoracion.imc}</p>
+      <p><strong>Peso:</strong> ${valoracion.peso}</p>
+      <p><strong>Altura:</strong> ${valoracion.altura}</p>
+      <p><strong>Clasificación:</strong> ${valoracion.clasificacion}</p>
+      <p><strong>Estado:</strong> ${valoracion.estado}</p>
+    `;
+  }
+</script>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
+    Todos los derechos reservados.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="Cerrar.js"></script>
+<script src="funcionesvaloracion.js"></script>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.11/dist/sweetalert2.all.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+<script>
+  // Obtén una referencia al elemento canvas
+  var canvas = document.getElementById('grafica-imc');
+
+  // Crea un contexto de gráfica 2D
+  var ctx = canvas.getContext('2d');
+
+  // Define los datos de ejemplo para el IMC y los meses
+  var imcData = [17, 18.5, 20.7, 22.2];
+  var meses = ['Enero', 'Febrero', 'Marzo', 'Abril'];
+
+  // Crea la configuración de la gráfica
+  var chartConfig = {
+    type: 'line',
+    data: {
+      labels: meses,
+      datasets: [{
+        label: 'IMC',
+        data: imcData,
+        backgroundColor: 'rgba(0, 123, 255, 0.5)',
+        borderColor: 'rgba(0, 123, 255, 1)',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
+  // Crea la gráfica utilizando Chart.js
+  new Chart(ctx, chartConfig);
+</script>
+
+</body>
+</html>
+
+
+{{!-- <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Listado de Citas</h3>
+              </div>
+              <div class="row justify-content-center">
+              <div class="col-md-10">
+                <h2 class="text-center mb-4">Calendario</h2>
+            </div>
+              <div class="col-lg-12">
+                <button class="btn"><i class="fas fa-plus">
+                    <a class="btn btn-dark boton-registro" href="/registrarcitas">
+                    Nueva Cita</a></i></button>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Nro</th>
+                    <th>Mes</th>
+                    <th>F. Cardiaca</th>
+                    <th>F. Respiratoria</th>
+                    <th>Presión Arterial</th>
+                    <th>Oxi. Sangre</th>
+                    <th>Imc</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>Clasificación</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                  </thead>
+                  <tr>
+                    <td>1</td>
+                    <td>Enero</td>
+                    <td>20</td>
+                    <td>25</td>
+                    <td>-10</td>
+                    <td>0.0</td>
+                    <td>17.0</td>
+                    <td>43 Kg</td>
+                    <td>1.55 Cm</td>
+                    <td>Sobre Peso</td>
+                    <td>Activo</td>
+                    <td>
+                          <a href="/valoracion" class="btn btn-warning btn-sm">
+                            <i class="fas fa-file  fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>                    
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Febrero</td>
+                    <td>30</td>
+                    <td>16</td>
+                    <td>-20</td>
+                    <td>0.1</td>
+                    <td>18.5</td>
+                    <td>48 Kg</td>
+                    <td>1.59 Cm</td>
+                    <td>Sobre Peso</td>
+                    <td>Activo</td>
+                    <td>
+                          <a href="/valoracion" class="btn btn-warning btn-sm">
+                            <i class="fas fa-file  fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>                    
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Marzo</td>
+                    <td>40</td>
+                    <td>27</td>
+                    <td>-30</td>
+                    <td>0.2</td>
+                    <td>20.7</td>
+                    <td>58 Kg</td>
+                    <td>1.74 Cm</td>
+                    <td>Equilibrado</td>
+                    <td>Activo</td>
+                    <td>
+                          <a href="/valoracion" class="btn btn-warning btn-sm">
+                            <i class="fas fa-file  fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>                    
+                  </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Abril</td>
+                    <td>50</td>
+                    <td>18</td>
+                    <td>-40</td>
+                    <td>0.3</td>
+                    <td>22.2</td>
+                    <td>64 Kg</td>
+                    <td>1.80 Cm</td>
+                    <td>Peso Ideal</td>
+                    <td>Activo</td>
+                    <td>
+                          <a href="/valoracion" class="btn btn-warning btn-sm">
+                            <i class="fas fa-file  fa-sm"></i>
+                          </a>
+                          <button onclick="confirmarEliminacion()" class="btn btn-danger btn-sm">
+                            <i class="fa fa-times fa-sm"></i>
+                          </button>                    
+                  </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <canvas id="grafica-imc"></canvas>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section> --}}

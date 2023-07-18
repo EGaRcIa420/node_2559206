@@ -269,22 +269,25 @@
                                 </div>
                               </div>
                               <div class="row">
-                                  <div class="col-sm-6">
-                                  <label for="estado">Permisos del Rol<span style="color: red;">*</span>: </label> 
-                                  <select id="estadorol" name="estado" required > 
-                                    <option value="activo">Listar</option>  
-                                    <option value="inactivo">Eliminar paquetes</option>
-                                    <option value="inactivo">Editar paquetes</option>
-                                    <option value="inactivo">Listar suscripciones</option>
-                                    <option value="inactivo">Eliminar suscripcion</option>
-                                    <option value="inactivo">Agregar pquetes</option>
-                                    <option value="inactivo">Agregar agendamiento</option>
-                                    <option value="inactivo">Eliminar agendamiento</option>
-                                  </select>
-                                  <a onclick="cantidad()" class="btn btn-dark btn-sm">
-                                      <i class="fas fa-plus  fa-sm"></i>
-                              </a>
-                                 </div>
+                                <div class="col-sm-6">
+                                  <label for="estado">Permisos del Rol<span style="color: red;">*</span>: </label>
+                                  <div class="d-flex">
+                                    <select id="estadorol" name="estado" required >
+                                      <option value="activo">Seleccionar</option> 
+                                      <option value="activo">agenda</option>  
+                                      <option value="inactivo">paquetes</option>
+                                      <option value="inactivo">servicios</option>
+                                      <option value="inactivo">accesso</option>
+                                      <option value="inactivo">suscripciones</option>
+                                      <option value="inactivo">empleados</option>
+                                      <option value="inactivo">citas</option>
+                                      <option value="inactivo">empleados</option>
+                                    </select>
+                                    <a onclick="cantidad()" class="btn btn-dark btn-sm ml-1 float-right">
+                                      <i class="fas fa-plus fa-sm"></i>
+                                    </a> 
+                                  </div>
+                                </div>
                               </div>
                               <div class="row"></div>
                                 <div class="col-sm-6">

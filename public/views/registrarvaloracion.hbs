@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROYECTO | T.H.O.R</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
+  <style>
+    .btn {
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="hold-transition white-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="dist/img/Weightlifting free icons designed by Freepik.png" alt="Nuevo Logo" height="60" width="60">
+
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/home" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+      <button class="btn btn-outline-info" type="button" id="botoncerrar">Cerrar</button>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="dist/img/logo.png" alt="Nuevo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">PROYECTO T.H.O.R</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="https://t1.uc.ltmcdn.com/es/posts/5/8/6/cuantas_calorias_se_queman_en_el_gym_48685_orig.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Emmanuel García</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-cubes"></i>
+              <p>
+                Módulos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/Dasboard" class="nav-link">
+                  <i class="fas fa-tachometer-alt dashboard-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/roles" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Roles</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/usuarios" class="nav-link">
+                    <i class="fas fa-user"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/servicios" class="nav-link ">
+                  <i class="fas fa-cogs nav-icon"></i>
+                  <p>Servicios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/paquetes" class="nav-link">
+                  <i class="fas fa-box nav-icon"></i>
+                  <p>Paquetes</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/empleados" class="nav-link ">
+                    <i class="fas fa-user-tie"></i>
+                    <p>Empleados</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/calendario" class="nav-link ">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Agenda Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/programacion" class="nav-link">
+                  <i class="fas fa-code"></i>
+                  <p>Programacion Clases</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/clientes" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Clientes</p>
+                </a>
+            </li>
+              <li class="nav-item">
+                <a href="/suscripciones" class="nav-link ">
+                    <i class="fas fa-user"></i>
+                    <p>Suscripciones</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/citas" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Citas</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+</nav>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Valoración Deportiva</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/home">Home</a></li>
+              <li class="breadcrumb-item active">Valoración Deportiva</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Agregar Valoración</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div style="background-color: #f2f2f2; padding: 20px;">
+            <h2>Agregar Valoración</h2>
+            <form>
+                <div class="row">
+                <div class="col-sm-2">
+                    <label for="frecuenciacardiaca">Frecuencia Cardiaca<span style="color: red;">*</span>:</label>
+                    <input type="text" id="frecuenciacardiaca" placeholder="Frecuencia Cardiaca" oninput="frecuenciaCardiaca()" required>
+                    <p id="texto1" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="presionarterial">Presión Arterial<span style="color: red;">*</span>:</label>
+                    <input type="text" id="presionarterial" placeholder="Presión Arterial" oninput="presionArterial()" required>
+                    <p id="texto2" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="frecuenciarespiratoria">Frecuencia Respiratoria<span style="color: red;">*</span>:</label>
+                    <input type="text" id="frecuenciarespiratoria" placeholder="Frecuencia Respiratoria" oninput="frecuenciaRespiratoria()" required>
+                    <p id="texto3" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="cantoxigenosangre">Cant. Oxigeno Sangre<span style="color: red;">*</span>:</label>
+                    <input type="text" id="cantoxigenosangre" placeholder="Cant. Oxigeno en la Sangre" oninput="cantoxigenoSangre()" required >
+                    <p id="texto4" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="altura">Altura<span style="color: red;">*</span>:</label>
+                    <input type="text" id="altura" placeholder="Altura (cm)" oninput="Altura()" required >
+                    <p id="texto5" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-sm-2">
+                    <label for="peso">Peso<span style="color: red;">*</span>:</label>
+                    <input type="text" id="peso" placeholder="Peso (kg)" oninput="Peso()" required>
+                    <p id="texto6" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="hallazgosanormales">Hallazgos Anormales<span style="color: red;">*</span>:</label>
+                    <input type="text" id="hallazgosanormales" placeholder="Hallazgos Anormales" oninput="Hallazgosanormales()" required>
+                    <p id="texto7" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="imc">IMC<span style="color: red;">*</span>:</label>
+                    <input type="text" id="imc" placeholder="IMC" oninput="Imc()" required >
+                    <p id="texto8" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="instructor">Instructor<span style="color: red;">*</span>:</label>
+                    <select id="instructor" name="instructor" required>
+                    <option value="seleccionar">Seleccionar Instructor</option>
+                    <option value="Daniel Giraldo">Daniel Giraldo</option>
+                    <option value="Jose Fernando">Jose Fernando</option>
+                    <option value="Luis Diaz">Luis Diaz</option>
+                    </select>
+                    <p id="texto-instructor" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="fecha">Fecha<span style="color: red;">*</span>:</label>
+                    <input type="date" id="fecha" placeholder="Fecha"  oninput="Fecha()" required>
+                    <p id="texto9" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <h2>Evaluación Cuerpo Sano</h2>
+                <br>
+                <div class="row">
+                <div class="col-sm-2">
+                  <label for="pliegue-biciptal">Pliegue Biciptal<span style="color: red;">*</span>:</label>
+                  <input type="text" id="plieguebiciptal" placeholder="Pliegue Biciptal" oninput="validarPliegueBiciptal()" required>
+                  <p id="texto10" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="pliegue-freciptal">Pliegue Freciptal<span style="color: red;">*</span>:</label>
+                  <input type="text" id="plieguefreciptal" placeholder="Pliegue Freciptal" oninput="validarPliegueFreciptal()" required>
+                  <p id="texto11" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="pliegue-escapular">Pliegue Escapular<span style="color: red;">*</span>:</label>
+                  <input type="text" id="pliegueescapular" placeholder="Pliegue Escapular" oninput="validarPliegueEscapular()" required>
+                  <p id="texto12" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="hombro-izquierdo">Hombro Izquierdo<span style="color: red;">*</span>:</label>
+                  <input type="text" id="hombroizquierdo" placeholder="Hombro Izquierdo" oninput="validarHombroIzquierdo()" required>
+                  <p id="texto13" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="hombro-derecho">Hombro Derecho<span style="color: red;">*</span>:</label>
+                  <input type="text" id="hombroderecho" placeholder="Hombro Derecho" oninput="validarHombroDerecho()" required>
+                  <p id="texto14" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-sm-2">
+                  <label for="pecho">Pecho<span style="color: red;">*</span>:</label>
+                  <input type="text" id="pecho" placeholder="Pecho" oninput="validarPecho()" required>
+                  <p id="texto15" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="bicepsderecho">Bíceps Derecho<span style="color: red;">*</span>:</label>
+                  <input type="text" id="bicepsderecho" placeholder="Bíceps Derecho" oninput="validarBicepsDerecho()" required>
+                  <p id="texto16" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="bicepsizquierdo">Bíceps Izquierdo<span style="color: red;">*</span>:</label>
+                  <input type="text" id="bicepsizquierdo" placeholder="Bíceps Izquierdo" oninput="validarBicepsIzquierdo()" required>
+                  <p id="texto17" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="antebrazoizquierdo">Antebrazo Izquierdo<span style="color: red;">*</span>:</label>
+                  <input type="text" id="antebrazoizquierdo" placeholder="Antebrazo Izquierdo" oninput="validarAntebrazoIzquierdo()" required>
+                  <p id="texto18" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                  <label for="antebrazoderecho">Antebrazo Derecho<span style="color: red;">*</span>:</label>
+                  <input type="text" id="antebrazoderecho" placeholder="Antebrazo Derecho" oninput="validarAntebrazoDerecho()" required>
+                  <p id="texto19" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-sm-2">
+                    <label for="muñecaizquierda">Muñeca Izquierda<span style="color: red;">*</span>:</label>
+                    <input type="text" id="muñecaizquierda" placeholder="Muñeca Izquierda" oninput="validarMuñecaIzquierda()" required>
+                    <p id="texto20" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="muñecaderecha">Muñeca Derecha<span style="color: red;">*</span>:</label>
+                    <input type="text" id="muñecaderecha" placeholder="Muñeca Derecha" oninput="validarMuñecaDerecha()" required>
+                    <p id="texto21" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="abdomen">Abdomen<span style="color: red;">*</span>:</label>
+                    <input type="text" id="abdomen" placeholder="Abdomen" oninput="validarAbdomen()" required>
+                    <p id="texto22" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="cintura">Cintura<span style="color: red;">*</span>:</label>
+                    <input type="text" id="cintura" placeholder="Cintura" oninput="validarCintura()" required>
+                    <p id="texto23" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="cadera">Cadera<span style="color: red;">*</span>:</label>
+                    <input type="text" id="cadera" placeholder="Cadera" oninput="validarCadera()" required>
+                    <p id="texto24" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-sm-2">
+                    <label for="musloderecho">Muslo Derecho<span style="color: red;">*</span>:</label>
+                    <input type="text" id="musloderecho" placeholder="Muslo Derecho" oninput="validarMusloDerecho()" required >
+                    <p id="texto25" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="musloizquierdo">Muslo Izquierdo<span style="color: red;">*</span>:</label>
+                    <input type="text" id="musloizquierdo" placeholder="Muslo Izquierdo" oninput="validarMusloIzquierdo()" required >
+                    <p id="texto26" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="rodilladerecha">Rodilla Derecha<span style="color: red;">*</span>:</label>
+                    <input type="text" id="rodilladerecha" placeholder="Rodilla Derecha" oninput="validarRodillaDerecha()" required >
+                    <p id="texto27" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="rodillaizquierda">Rodilla Izquierda<span style="color: red;">*</span>:</label>
+                    <input type="text" id="rodillaizquierda" placeholder="Rodilla Izquierda" oninput="validarRodillaIzquierda()" required >
+                    <p id="texto28" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="gastromenioderecho">Gastromenio Derecho<span style="color: red;">*</span>:</label>
+                    <input type="text" id="gastromenioderecho" placeholder="Gastromenio Derecho" oninput="validarGastromenioDerecho()" required >
+                    <p id="texto29" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-sm-2">
+                    <label for="gastromenioizquierdo">Gastromenio Izquierdo<span style="color: red;">*</span>:</label>
+                    <input type="text" id="gastromenioizquierdo" placeholder="Gastromenio Izquierdo" oninput="validarGastromenioIzquierdo()" required >
+                    <p id="texto30" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="tobilloderecho">Tobillo Derecho<span style="color: red;">*</span>:</label>
+                    <input type="text" id="tobilloderecho" placeholder="Tobillo Derecho" oninput="validarTobilloDerecho()" required >
+                    <p id="texto31" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="tobilloizquierdo">Tobillo Izquierdo<span style="color: red;">*</span>:</label>
+                    <input type="text" id="tobilloizquierdo" placeholder="Tobillo Izquierdo" oninput="validarTobilloIzquierdo()">
+                    <p id="texto32" style="color: red;"></p>
+                </div>
+                <div class="col-sm-2">
+                    <label for="tallapantalon">Talla del Pantalón<span style="color: red;">*</span>:</label>
+                    <input type="text" id="tallapantalon" placeholder="Talla del Pantalón" oninput="validarTallaPantalon()" required>
+                    <p id="texto33" style="color: red;"></p>
+                </div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-success boton-registro" onclick="guardarValoracion()">Guardar</button>
+                <button type="button" class="btn btn-danger boton-cancelar" onclick="mostrarConfirmacionCancelar()">Cancelar</button>
+            </form>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2022-2023 <a href="https://adminlte.io">PROYECTO T.H.O.R</a>.</strong>
+    Todos los derechos reservados.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="Cerrar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+<script src="funcionesvaloracion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>
